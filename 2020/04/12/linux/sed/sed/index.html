@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="sudo rsync –log-file&#x3D;&#x2F;tmp&#x2F;home –log-file-format&#x3D;’%o %i %n%L’ -rlptgoDPvh –exclude-from&#x3D;&#x2F;home&#x2F;dingzhengkai&#x2F;rsync-exclude4usb.txt –delete –delete-before –ignore-errors –force –delete-missing-args &#x2F;home&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux&#x2F;sed&#x2F;sed">
+<meta property="og:url" content="http://yoursite.com/2020/04/12/linux/sed/sed/index.html">
+<meta property="og:site_name" content="shy blog">
+<meta property="og:description" content="sudo rsync –log-file&#x3D;&#x2F;tmp&#x2F;home –log-file-format&#x3D;’%o %i %n%L’ -rlptgoDPvh –exclude-from&#x3D;&#x2F;home&#x2F;dingzhengkai&#x2F;rsync-exclude4usb.txt –delete –delete-before –ignore-errors –force –delete-missing-args &#x2F;home&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-12T02:45:22.237Z">
+<meta property="article:modified_time" content="2020-04-12T02:45:00.041Z">
+<meta property="article:author" content="shy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/04/12/linux/sed/sed/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>linux/sed/sed | shy blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shy blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">shy记录博客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-games">
+
+    <a href="/games" rel="section"><i class="fa fa-fw fa-gamepad"></i>games</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/linux/sed/sed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="shy">
+      <meta itemprop="description" content="我的运维，我的生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shy blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux/sed/sed
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-12 10:45:22 / 修改时间：10:45:00" itemprop="dateCreated datePublished" datetime="2020-04-12T10:45:22+08:00">2020-04-12</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>sudo rsync –log-file=/tmp/home –log-file-format=’%o %i %n%L’ -rlptgoDPvh –exclude-from=/home/dingzhengkai/rsync-exclude4usb.txt –delete –delete-before –ignore-errors –force –delete-missing-args /home/dingzhengkai/ /media/dingzhengkai/dingzk/3feidao/dingzhengkai<br>rsync 日志  –log-file=/tmp/home –log-file-format=’%o %i %n%L’</p>
+<p>rsync -e ‘ssh -p 34521’   -rlptgoDPvhz  /data/cnpm_all_2019.tar.gz    <a href="mailto:root@119.3.168.158">root@119.3.168.158</a>:/data/npm/</p>
+<p>sudo rsync –log-file=/tmp/home –log-file-format=’%o %i %n%L’ -rlptgoDPvh –exclude-from=/home/dingzhengkai/rsync-exclude4usb.txt –delete –delete-before –ignore-errors –force –delete-missing-args /home/dingzhengkai/ /media/dingzhengkai/dingzk/3feidao/dingzhengkai</p>
+<p>rsync –log-file=/tmp/home –log-file-format=’%o %i %n%L’</p>
+<p>sed -i “s#develop#develop01#g” <code>grep develop -rl ./</code></p>
+<p>sed -i “s#61.163.79.140:7001#registry.npm.ifeidao.com:7001#g” <code>grep 61.163.79.140:7001 -rl ./*/*/start.sh</code></p>
+<p>sudo firewall-cmd –add-port=12345/tcp –permanen<br>sudo firewall-cmd –add-port=12345/tcp</p>
+<p>sudo firewall-cmd –add-port=12344/tcp –permanen<br>sudo firewall-cmd –add-port=12344/tcp</p>
+<p>sed -i “s#docker.ifeidao.com:5000#61.163.79.140:8000#g” <code>grep docker.ifeidao.com:5000 -rl ./</code></p>
+<p>sed -i “s#196#hw-dev#g” <code>grep 196 -rl ./</code></p>
+<p>sed -i “s#192.168.150.12#192.168.11.104#g” <code>grep 192.168.150.12 -rl ./</code><br>sed -i “s#192.168.150.20:7050#192.168.11.101:8081#g” <code>grep 192.168.150.20:7050 -rl ./</code></p>
+<p>sed -i “s#121.11.96.89:7001#registry.npm.koimy.com:7001#g” <code>grep 121.11.96.89:7001 -rl ./</code></p>
+<p>sed -i “s#61.163.79.140:7001#registry.npm.ifeidao.com:7001#g” <code>grep 61.163.79.140:7001 -rl ./*/start.sh</code></p>
+<p>sed -i “s#192.168.40.196/ws#183.63.157.139:25280/ws#g” <code>grep 192.168.40.196/ws -rl ./</code></p>
+<p>sed -i “s#<a href="http://course.hactcm.edu.cn#https://course.hactcm.edu.cn#g&quot;" target="_blank" rel="noopener">http://course.hactcm.edu.cn#https://course.hactcm.edu.cn#g&quot;</a> <code>grep http://course.hactcm.edu.cn -rl ./</code></p>
+<p>  sed -i “s#192.168.40.196/fsweb#183.63.157.139:25280/fsweb#g” <code>grep 192.168.40.196/fsweb -rl ./</code></p>
+<p>“<a href="https://selfsell.daokes.com&quot;;r.mqtt=&quot;wss://selfsell.daokes.com/wss&quot;q" target="_blank" rel="noopener">https://selfsell.daokes.com&quot;;r.mqtt=&quot;wss://selfsell.daokes.com/wss&quot;q</a></p>
+<p>alter USER ‘root’@’localhost’ IDENTIFIED BY ‘mysql#tqbc’;<br>create USER ‘root’@’%’ IDENTIFIED BY ‘mysql#tqbc’;<br>FLUSH PRIVILEGES;</p>
+<p>SET PASSWORD = PASSWORD(‘mysql#tqbc’);</p>
+<p>ALTER USER ‘root’@’%’ PASSWORD EXPIRE NEVER;</p>
+<p>grant all on <em>.</em> to ‘root’@’%’;</p>
+<p>cnpm set registry=<a href="http://121.11.96.89:7001" target="_blank" rel="noopener">http://121.11.96.89:7001</a></p>
+<p>cnpm install mysql –registry=<a href="http://121.11.96.89:7001" target="_blank" rel="noopener">http://121.11.96.89:7001</a></p>
+<p>curl -H “Content-Type:application/json” -X POST –data ‘{“message”: “sunshine”}’ <a href="http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay" target="_blank" rel="noopener">http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay</a></p>
+<p>curl -H “Content-Type:application/json” -X POST –data ‘{“message”: “sunshine”}’ <a href="http://61.163.79.140:16100/ant_card-mobile/ant_card_pay" target="_blank" rel="noopener">http://61.163.79.140:16100/ant_card-mobile/ant_card_pay</a> </p>
+<p>curl -H “Content-Type:application/json” -X POST  <a href="http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay" target="_blank" rel="noopener">http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay</a></p>
+<p>服务    域名地址    IP<br>cnpm仓库地址    registry.npm.koimy.com    121.11.96.89<br>cnpm仓库web地址    npm.koimy.com    121.11.96.89<br>jenkins访问地址    jenkins.koimy.com    121.11.96.89<br>maven私服访问地址    maven.koimy.com    121.11.96.89<br>gitlab访问地址    git.koimy.com    47.112.117.227<br>svn访问地址    svn.koimy.com    47.112.117.227<br>web项目开发访问地址    dev.koimy.com    14.29.233.63<br>地图服务（使用？）    geoserver.koimy.com    14.29.233.63<br>sql server数据库    mssql01.koimy.com    14.29.233.63<br>mongo数据库    mongo01.koimy.com    14.29.233.63<br>postgre数据库    pg01.koimy.com    14.29.233.63</p>
+<p>15 3 * *  * feidao cd /backup/databackup/mysql/ &amp;&amp; bash  /backup/databackup/mysql/mysqlbak-20190402181120.sh<br>15 4 * *  * feidao cd /backup/databackup/pg/ &amp;&amp; bash /backup/databackup/pg/pgbak.sh<br>20 4 * *  * feidao cd /backup/databackup/mongo &amp;&amp; bash /backup/databackup/mongo/mongobak.sh</p>
+<h1 id="定时删除旧的备份"><a href="#定时删除旧的备份" class="headerlink" title="定时删除旧的备份"></a>定时删除旧的备份</h1><p>30 5 * *  * feidao cd /backup/databackup/ &amp;&amp; bash /backup/databackup/startdel.sh</p>
+<p>sed -i “s#<a href="https://cdn.jsdelivr.net#http://dgcampus.daokes.com#g&quot;" target="_blank" rel="noopener">https://cdn.jsdelivr.net#http://dgcampus.daokes.com#g&quot;</a> <code>grep https://cdn.jsdelivr.net -rl ./</code></p>
+<p>sed -i “s#soa_196_d161c9d7-85d6-4fe1-bd62-b6447fd52062#soa_144_976cc9c0-4f4b-4234-95ac-a8a0c6f29311#g” <code>grep soa_196_d161c9d7-85d6-4fe1-bd62-b6447fd52062 -rl ./zk.json</code></p>
+<p>1 开发服务器，部署了soa，mongodb，postgre，sqlserver等       14.29.233.63<br>2 部署了zabbix，私服，cnpm，部署工具等       121.11.96.89<br>因为做开发测试造成的服务不稳定，计划用剩余3台部署拆分14.29.233.63的服务<br>1 mongodb主节点       125.91.105.169<br>2 postgre sqlserver mongodb从节点    59.36.143.250<br>3 用作开发的soa mongodb从节点      125.91.111.228</p>
+<p>firewall-cmd –add-forward-port=port=10031:proto=tcp:toaddr=183.63.157.139:toport=24931<br>firewall-cmd –add-forward-port=port=10021:proto=tcp:toaddr=183.63.157.139:toport=25021</p>
+<p>iptables -t nat -A PREROUTING –dst 192.168.0.6 -p tcp –dport 10031 -j DNAT –to-destination 183.63.157.139:24931</p>
+<p>firewall-cmd –permanent –zone=public –add-forward-port=port=50070:proto=tcp:toport=50070:toaddr=172.16.10.178<br>firewall-cmd –permanent –zone=public –add-forward-port=port=50070:proto=tcp:toport=50070:toaddr=172.16.10.178</p>
+<p>iptables -t nat -A PREROUTING -i eth0 -p tcp –dport 10031 -j DNAT –to 183.63.157.139:24931</p>
+<p>alter user postgres with password ‘xy$2o19!’;</p>
+<p>rsync -rlptgoDPvhz –password-file=../rsync.password mongobackup_20200107112531 <a href="mailto:root@114.116.19.243">root@114.116.19.243</a>::194mongo</p>
+<p>mount -o username=wanglinlin,password=wanglinlin //192.168.40.93/ftp_backup /mnt/nas</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/11/centos/centos-bind/" rel="prev" title="centos-bind">
+      <i class="fa fa-chevron-left"></i> centos-bind
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/12/js/npm/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="npm常用命令">
+      npm常用命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定时删除旧的备份"><span class="nav-number">1.</span> <span class="nav-text">定时删除旧的备份</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">shy</p>
+  <div class="site-description" itemprop="description">我的运维，我的生活</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/shy1227" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;shy1227" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:shy1227@163.com" title="E-Mail → mailto:shy1227@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:shy1227@live.cn?call|chat" title="Skype → skype:shy1227@live.cn?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://shy1227.lofter.com/" title="Lofter → http:&#x2F;&#x2F;shy1227.lofter.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-vk"></i>Lofter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-book"></i>
+      推荐阅读
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.ttlsa.com/" title="http:&#x2F;&#x2F;www.ttlsa.com&#x2F;" rel="noopener" target="_blank">运维生存时间</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iyunw.cn/" title="https:&#x2F;&#x2F;www.iyunw.cn" rel="noopener" target="_blank">爱运维</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://linux.51yip.com/" title="http:&#x2F;&#x2F;linux.51yip.com&#x2F;" rel="noopener" target="_blank">Linux命令手册</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://echarts.baidu.com/index.html" title="https:&#x2F;&#x2F;echarts.baidu.com&#x2F;index.html" rel="noopener" target="_blank">echarts可视化库</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">31k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">28 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>npm常用命令</title>
+    <url>/2020/04/12/js/npm/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="npm-install-安装模块"><a href="#npm-install-安装模块" class="headerlink" title="npm install 安装模块"></a>npm install 安装模块</h2><p>基础语法</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install (with no args, <span class="keyword">in</span> package dir)</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;tag&gt;</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version&gt;</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version range&gt;</span><br><span class="line">npm install &lt;tarball file&gt;</span><br><span class="line">npm install &lt;tarball url&gt;</span><br><span class="line">npm install &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span>: npm i</span><br><span class="line">common options: [-S|--save|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [--dry-run]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">安装包，默认会安装最新的版本</span><br><span class="line"></span><br><span class="line">npm install gulp</span><br><span class="line"></span><br><span class="line">安装指定版本</span><br><span class="line"></span><br><span class="line">npm install gulp@3.9.1</span><br><span class="line">安装包并将信息保持到项目的package.json文件中</span><br></pre></td></tr></table></figure>
+
+<p>npm install</p>
+<h3 id="本地安装（local）"><a href="#本地安装（local）" class="headerlink" title="本地安装（local）"></a>本地安装（local）</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install gulp</span><br><span class="line">全局安装（global）,使用 -g 或 --global</span><br><span class="line"></span><br><span class="line">npm install gulp -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-uninstall-卸载模块"><a href="#npm-uninstall-卸载模块" class="headerlink" title="npm uninstall 卸载模块"></a>npm uninstall 卸载模块</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall [&lt;@scope&gt;/]&lt;pkg&gt;[@&lt;version&gt;]... [-S|--save|-D|--save-dev|-O|--save-optional]</span><br><span class="line"></span><br><span class="line">aliases: remove, rm, r, un, unlink</span><br><span class="line">如卸载开发版本的模块</span><br><span class="line"></span><br><span class="line">npm uninstall gulp --save-dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-update-更新模块"><a href="#npm-update-更新模块" class="headerlink" title="npm update 更新模块"></a>npm update 更新模块</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm update [-g] [&lt;pkg&gt;...]</span><br><span class="line">npm outdated 检查模块是否已经过时</span><br><span class="line">基础语法</span><br><span class="line"></span><br><span class="line">npm outdated [[&lt;@scope&gt;/]&lt;pkg&gt; ...]</span><br><span class="line">此命令会列出所有已经过时的包，可以及时进行包的更新</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-ls-查看安装的模块"><a href="#npm-ls-查看安装的模块" class="headerlink" title="npm ls 查看安装的模块"></a>npm ls 查看安装的模块</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm ls [[&lt;@scope&gt;/]&lt;pkg&gt; ...]</span><br><span class="line"></span><br><span class="line">aliases: list, la, ll</span><br><span class="line">查看全局安装的模块及依赖</span><br><span class="line"></span><br><span class="line">npm ls -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="init-在项目中引导创建一个package-json文件"><a href="#init-在项目中引导创建一个package-json文件" class="headerlink" title="init 在项目中引导创建一个package.json文件"></a>init 在项目中引导创建一个package.json文件</h2><p>安装包的信息可保持到项目的package.json文件中，以便后续的其它的项目开发或者他人合作使用，也说package.json在项目中是必不可少的。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm init [-f|--force|-y|--yes]</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-help-查看某条命令的详细帮助"><a href="#npm-help-查看某条命令的详细帮助" class="headerlink" title="npm help 查看某条命令的详细帮助"></a>npm help 查看某条命令的详细帮助</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">help</span> &lt;term&gt; [&lt;terms..&gt;]</span><br><span class="line">例如输入npm <span class="built_in">help</span> install，</span><br><span class="line">系统在默认的浏览器或者默认的编辑器中打开本地nodejs安装包的文件/nodejs/node_modules/npm/html/doc/cli/npm-install.html</span><br><span class="line"></span><br><span class="line">npm <span class="built_in">help</span> install</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-root-查看包的安装路径"><a href="#npm-root-查看包的安装路径" class="headerlink" title="npm root 查看包的安装路径"></a>npm root 查看包的安装路径</h2><p>输出 node_modules的路径</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm root [-g]</span><br><span class="line">npm config 管理npm的配置路径</span><br><span class="line">基础语法</span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> &lt;key&gt; &lt;value&gt; [-g|--global]</span><br><span class="line">npm config get &lt;key&gt;</span><br><span class="line">npm config delete &lt;key&gt;</span><br><span class="line">npm config list</span><br><span class="line">npm config edit</span><br><span class="line">npm get &lt;key&gt;</span><br><span class="line">npm <span class="built_in">set</span> &lt;key&gt; &lt;value&gt; [-g|--global]</span><br><span class="line"></span><br><span class="line">对于config这块用得最多应该是设置代理，解决npm安装一些模块失败的问题</span><br><span class="line"></span><br><span class="line">例如我在公司内网，因为公司的防火墙原因，无法完成任何模块的安装，这个时候设置代理可以解决</span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> proxy=http://xxx</span><br><span class="line">又如国内的网络环境问题，某官方的IP可能被和谐了，幸好国内有好心人，搭建了镜像，此时我们简单设置镜像</span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> registry=<span class="string">"http://r.cnpmjs.org"</span></span><br><span class="line">也可以临时配置，如安装淘宝镜像</span><br><span class="line"></span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-cache-管理模块的缓存"><a href="#npm-cache-管理模块的缓存" class="headerlink" title="npm cache 管理模块的缓存"></a>npm cache 管理模块的缓存</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm cache add &lt;tarball file&gt;</span><br><span class="line">npm cache add &lt;folder&gt;</span><br><span class="line">npm cache add &lt;tarball url&gt;</span><br><span class="line">npm cache add &lt;name&gt;@&lt;version&gt;</span><br><span class="line"></span><br><span class="line">npm cache ls [&lt;path&gt;]</span><br><span class="line"></span><br><span class="line">npm cache clean [&lt;path&gt;]</span><br><span class="line">复制代码</span><br><span class="line">复制代码</span><br><span class="line">最常用命令无非清除npm本地缓存</span><br><span class="line"></span><br><span class="line">npm cache clean</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-start-启动模块"><a href="#npm-start-启动模块" class="headerlink" title="npm start 启动模块"></a>npm start 启动模块</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm start [-- &lt;args&gt;]</span><br><span class="line">该命令写在package.json文件scripts的start字段中，可以自定义命令来配置一个服务器环境和安装一系列的必要程序，如</span><br><span class="line"></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"gulp -ws"</span></span><br><span class="line">&#125;</span><br><span class="line">此时在cmd中输入npm start命令相当于执行gulpfile.js文件自定义的watch和server命令。</span><br><span class="line"></span><br><span class="line">如果package.json文件没有设置start，则将直接启动node server.js</span><br><span class="line"></span><br><span class="line"><span class="comment">## npm stop 停止模块</span></span><br><span class="line"></span><br><span class="line">基础语法</span><br><span class="line"></span><br><span class="line">npm stop [-- &lt;args&gt;]</span><br><span class="line"></span><br><span class="line"><span class="comment">## npm restart 重新启动模块</span></span><br><span class="line"></span><br><span class="line">基础语法</span><br><span class="line"></span><br><span class="line">npm restart [-- &lt;args&gt;]</span><br><span class="line"></span><br><span class="line"><span class="comment">##npm test 测试模块</span></span><br><span class="line"></span><br><span class="line">基础语法</span><br><span class="line"></span><br><span class="line">npm <span class="built_in">test</span> [-- &lt;args&gt;]</span><br><span class="line">npm tst [-- &lt;args&gt;]</span><br><span class="line">该命令写在package.json文件scripts的<span class="built_in">test</span>字段中，可以自定义该命令来执行一些操作，如</span><br><span class="line"></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"gulp release"</span></span><br><span class="line">&#125;,</span><br><span class="line">此时在cmd中输入npm <span class="built_in">test</span>命令相当于执行gulpfile.js文件自定义的release命令。</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-version-查看模块版本"><a href="#npm-version-查看模块版本" class="headerlink" title="npm version 查看模块版本"></a>npm version 查看模块版本</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-view-查看模块的注册信息"><a href="#npm-view-查看模块的注册信息" class="headerlink" title="npm view 查看模块的注册信息"></a>npm view 查看模块的注册信息</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm view [&lt;@scope&gt;/]&lt;name&gt;[@&lt;version&gt;] [&lt;field&gt;[.&lt;subfield&gt;]...]</span><br><span class="line"></span><br><span class="line">aliases: info, show, v</span><br><span class="line">查看模块的依赖关系</span><br><span class="line"></span><br><span class="line">npm view gulp dependencies</span><br><span class="line">查看模块的源文件地址</span><br><span class="line"></span><br><span class="line">npm view gulp repository.url</span><br><span class="line">查看模块的贡献者，包含邮箱地址</span><br><span class="line"></span><br><span class="line">npm view npm contributors</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-adduser-用户登录"><a href="#npm-adduser-用户登录" class="headerlink" title="npm adduser 用户登录"></a>npm adduser 用户登录</h2><p>基础语法</p>
+<p>npm adduser [–registry=url] [–scope=@orgname] [–always-auth]</p>
+<p>发布模板到npm社区前需要先登录，然后再进入发布的操作</p>
+<h2 id="npm-publish-发布模块"><a href="#npm-publish-发布模块" class="headerlink" title="npm publish 发布模块"></a>npm publish 发布模块</h2><p>基础语法</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm publish [&lt;tarball&gt;|&lt;folder&gt;] [--tag &lt;tag&gt;] [--access &lt;public|restricted&gt;]</span><br><span class="line"></span><br><span class="line">Publishes <span class="string">'.'</span> <span class="keyword">if</span> no argument supplied</span><br><span class="line">Sets tag <span class="string">'latest'</span> <span class="keyword">if</span> no --tag specified</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-access-在发布的包上设置访问级别"><a href="#npm-access-在发布的包上设置访问级别" class="headerlink" title="npm access 在发布的包上设置访问级别"></a>npm access 在发布的包上设置访问级别</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm access public [&lt;package&gt;]</span><br><span class="line">npm access restricted [&lt;package&gt;]</span><br><span class="line"></span><br><span class="line">npm access grant &lt;<span class="built_in">read</span>-only|<span class="built_in">read</span>-write&gt; &lt;scope:team&gt; [&lt;package&gt;]</span><br><span class="line">npm access revoke &lt;scope:team&gt; [&lt;package&gt;]</span><br><span class="line"></span><br><span class="line">npm access ls-packages [&lt;user&gt;|&lt;scope&gt;|&lt;scope:team&gt;]</span><br><span class="line">npm access ls-collaborators [&lt;package&gt; [&lt;user&gt;]]</span><br><span class="line">npm access edit [&lt;package&gt;]</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://www.cnblogs.com/itlkNote/p/6830682.html" alt="参考"></p>
+]]></content>
+      <categories>
+        <category>nodejs</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux/sed/sed</title>
+    <url>/2020/04/12/linux/sed/sed/</url>
+    <content><![CDATA[<p>sudo rsync –log-file=/tmp/home –log-file-format=’%o %i %n%L’ -rlptgoDPvh –exclude-from=/home/dingzhengkai/rsync-exclude4usb.txt –delete –delete-before –ignore-errors –force –delete-missing-args /home/dingzhengkai/ /media/dingzhengkai/dingzk/3feidao/dingzhengkai<br>rsync 日志  –log-file=/tmp/home –log-file-format=’%o %i %n%L’</p>
+<p>rsync -e ‘ssh -p 34521’   -rlptgoDPvhz  /data/cnpm_all_2019.tar.gz    <a href="mailto:root@119.3.168.158">root@119.3.168.158</a>:/data/npm/</p>
+<p>sudo rsync –log-file=/tmp/home –log-file-format=’%o %i %n%L’ -rlptgoDPvh –exclude-from=/home/dingzhengkai/rsync-exclude4usb.txt –delete –delete-before –ignore-errors –force –delete-missing-args /home/dingzhengkai/ /media/dingzhengkai/dingzk/3feidao/dingzhengkai</p>
+<p>rsync –log-file=/tmp/home –log-file-format=’%o %i %n%L’</p>
+<p>sed -i “s#develop#develop01#g” <code>grep develop -rl ./</code></p>
+<p>sed -i “s#61.163.79.140:7001#registry.npm.ifeidao.com:7001#g” <code>grep 61.163.79.140:7001 -rl ./*/*/start.sh</code></p>
+<p>sudo firewall-cmd –add-port=12345/tcp –permanen<br>sudo firewall-cmd –add-port=12345/tcp</p>
+<p>sudo firewall-cmd –add-port=12344/tcp –permanen<br>sudo firewall-cmd –add-port=12344/tcp</p>
+<p>sed -i “s#docker.ifeidao.com:5000#61.163.79.140:8000#g” <code>grep docker.ifeidao.com:5000 -rl ./</code></p>
+<p>sed -i “s#196#hw-dev#g” <code>grep 196 -rl ./</code></p>
+<p>sed -i “s#192.168.150.12#192.168.11.104#g” <code>grep 192.168.150.12 -rl ./</code><br>sed -i “s#192.168.150.20:7050#192.168.11.101:8081#g” <code>grep 192.168.150.20:7050 -rl ./</code></p>
+<p>sed -i “s#121.11.96.89:7001#registry.npm.koimy.com:7001#g” <code>grep 121.11.96.89:7001 -rl ./</code></p>
+<p>sed -i “s#61.163.79.140:7001#registry.npm.ifeidao.com:7001#g” <code>grep 61.163.79.140:7001 -rl ./*/start.sh</code></p>
+<p>sed -i “s#192.168.40.196/ws#183.63.157.139:25280/ws#g” <code>grep 192.168.40.196/ws -rl ./</code></p>
+<p>sed -i “s#<a href="http://course.hactcm.edu.cn#https://course.hactcm.edu.cn#g&quot;" target="_blank" rel="noopener">http://course.hactcm.edu.cn#https://course.hactcm.edu.cn#g&quot;</a> <code>grep http://course.hactcm.edu.cn -rl ./</code></p>
+<p>  sed -i “s#192.168.40.196/fsweb#183.63.157.139:25280/fsweb#g” <code>grep 192.168.40.196/fsweb -rl ./</code></p>
+<p>“<a href="https://selfsell.daokes.com&quot;;r.mqtt=&quot;wss://selfsell.daokes.com/wss&quot;q" target="_blank" rel="noopener">https://selfsell.daokes.com&quot;;r.mqtt=&quot;wss://selfsell.daokes.com/wss&quot;q</a></p>
+<p>alter USER ‘root’@’localhost’ IDENTIFIED BY ‘mysql#tqbc’;<br>create USER ‘root’@’%’ IDENTIFIED BY ‘mysql#tqbc’;<br>FLUSH PRIVILEGES;</p>
+<p>SET PASSWORD = PASSWORD(‘mysql#tqbc’);</p>
+<p>ALTER USER ‘root’@’%’ PASSWORD EXPIRE NEVER;</p>
+<p>grant all on <em>.</em> to ‘root’@’%’;</p>
+<p>cnpm set registry=<a href="http://121.11.96.89:7001" target="_blank" rel="noopener">http://121.11.96.89:7001</a></p>
+<p>cnpm install mysql –registry=<a href="http://121.11.96.89:7001" target="_blank" rel="noopener">http://121.11.96.89:7001</a></p>
+<p>curl -H “Content-Type:application/json” -X POST –data ‘{“message”: “sunshine”}’ <a href="http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay" target="_blank" rel="noopener">http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay</a></p>
+<p>curl -H “Content-Type:application/json” -X POST –data ‘{“message”: “sunshine”}’ <a href="http://61.163.79.140:16100/ant_card-mobile/ant_card_pay" target="_blank" rel="noopener">http://61.163.79.140:16100/ant_card-mobile/ant_card_pay</a> </p>
+<p>curl -H “Content-Type:application/json” -X POST  <a href="http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay" target="_blank" rel="noopener">http://61.163.79.140:16100/ant_card-mobile/ant_card_partially_repay</a></p>
+<p>服务    域名地址    IP<br>cnpm仓库地址    registry.npm.koimy.com    121.11.96.89<br>cnpm仓库web地址    npm.koimy.com    121.11.96.89<br>jenkins访问地址    jenkins.koimy.com    121.11.96.89<br>maven私服访问地址    maven.koimy.com    121.11.96.89<br>gitlab访问地址    git.koimy.com    47.112.117.227<br>svn访问地址    svn.koimy.com    47.112.117.227<br>web项目开发访问地址    dev.koimy.com    14.29.233.63<br>地图服务（使用？）    geoserver.koimy.com    14.29.233.63<br>sql server数据库    mssql01.koimy.com    14.29.233.63<br>mongo数据库    mongo01.koimy.com    14.29.233.63<br>postgre数据库    pg01.koimy.com    14.29.233.63</p>
+<p>15 3 * *  * feidao cd /backup/databackup/mysql/ &amp;&amp; bash  /backup/databackup/mysql/mysqlbak-20190402181120.sh<br>15 4 * *  * feidao cd /backup/databackup/pg/ &amp;&amp; bash /backup/databackup/pg/pgbak.sh<br>20 4 * *  * feidao cd /backup/databackup/mongo &amp;&amp; bash /backup/databackup/mongo/mongobak.sh</p>
+<h1 id="定时删除旧的备份"><a href="#定时删除旧的备份" class="headerlink" title="定时删除旧的备份"></a>定时删除旧的备份</h1><p>30 5 * *  * feidao cd /backup/databackup/ &amp;&amp; bash /backup/databackup/startdel.sh</p>
+<p>sed -i “s#<a href="https://cdn.jsdelivr.net#http://dgcampus.daokes.com#g&quot;" target="_blank" rel="noopener">https://cdn.jsdelivr.net#http://dgcampus.daokes.com#g&quot;</a> <code>grep https://cdn.jsdelivr.net -rl ./</code></p>
+<p>sed -i “s#soa_196_d161c9d7-85d6-4fe1-bd62-b6447fd52062#soa_144_976cc9c0-4f4b-4234-95ac-a8a0c6f29311#g” <code>grep soa_196_d161c9d7-85d6-4fe1-bd62-b6447fd52062 -rl ./zk.json</code></p>
+<p>1 开发服务器，部署了soa，mongodb，postgre，sqlserver等       14.29.233.63<br>2 部署了zabbix，私服，cnpm，部署工具等       121.11.96.89<br>因为做开发测试造成的服务不稳定，计划用剩余3台部署拆分14.29.233.63的服务<br>1 mongodb主节点       125.91.105.169<br>2 postgre sqlserver mongodb从节点    59.36.143.250<br>3 用作开发的soa mongodb从节点      125.91.111.228</p>
+<p>firewall-cmd –add-forward-port=port=10031:proto=tcp:toaddr=183.63.157.139:toport=24931<br>firewall-cmd –add-forward-port=port=10021:proto=tcp:toaddr=183.63.157.139:toport=25021</p>
+<p>iptables -t nat -A PREROUTING –dst 192.168.0.6 -p tcp –dport 10031 -j DNAT –to-destination 183.63.157.139:24931</p>
+<p>firewall-cmd –permanent –zone=public –add-forward-port=port=50070:proto=tcp:toport=50070:toaddr=172.16.10.178<br>firewall-cmd –permanent –zone=public –add-forward-port=port=50070:proto=tcp:toport=50070:toaddr=172.16.10.178</p>
+<p>iptables -t nat -A PREROUTING -i eth0 -p tcp –dport 10031 -j DNAT –to 183.63.157.139:24931</p>
+<p>alter user postgres with password ‘xy$2o19!’;</p>
+<p>rsync -rlptgoDPvhz –password-file=../rsync.password mongobackup_20200107112531 <a href="mailto:root@114.116.19.243">root@114.116.19.243</a>::194mongo</p>
+<p>mount -o username=wanglinlin,password=wanglinlin //192.168.40.93/ftp_backup /mnt/nas</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>centos-bind</title>
+    <url>/2020/04/11/centos/centos-bind/</url>
+    <content><![CDATA[<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><p>DNS 服务</p>
+<p><img src="centos-bind/sd.jpeg" alt="图片"></p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>安装bind</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install <span class="built_in">bind</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#bind-chroot</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动服务</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status named</span><br><span class="line">systemctl start named</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置开机启动</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> named</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>开启防火墙端口</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">firewall-cmd --add-service=dns --permanent</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置文件</p>
+<blockquote>
+<p>vi /etc/named.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">	&#x2F;&#x2F;修改为any 监听所有IP</span><br><span class="line">	listen-on port 53 &#123; any; &#125;;</span><br><span class="line">	listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">	directory 	&quot;&#x2F;var&#x2F;named&quot;;</span><br><span class="line">	dump-file 	&quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;cache_dump.db&quot;;</span><br><span class="line">	statistics-file &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named_stats.txt&quot;;</span><br><span class="line">	memstatistics-file &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named_mem_stats.txt&quot;;</span><br><span class="line">	&#x2F;&#x2F;修改为any，也可以指定内网IP，DNS查询</span><br><span class="line">	allow-query     &#123; any; &#125;;</span><br><span class="line"></span><br><span class="line">	recursion yes;</span><br><span class="line"></span><br><span class="line">	dnssec-enable yes;</span><br><span class="line">	dnssec-validation yes;</span><br><span class="line"></span><br><span class="line">	&#x2F;* Path to ISC DLV key *&#x2F;</span><br><span class="line">	bindkeys-file &quot;&#x2F;etc&#x2F;named.iscdlv.key&quot;;</span><br><span class="line"></span><br><span class="line">	managed-keys-directory &quot;&#x2F;var&#x2F;named&#x2F;dynamic&quot;;</span><br><span class="line">	&#x2F;* 从服务器  *&#x2F;</span><br><span class="line">	allow-transfer &#123; 192.168.40.201;&#125;;</span><br><span class="line">	&#x2F;* 主动通知从服务器更新 *&#x2F;</span><br><span class="line">	also-notify &#123; 192.168.40.201; &#125;;</span><br><span class="line">	pid-file &quot;&#x2F;run&#x2F;named&#x2F;named.pid&quot;;</span><br><span class="line">	session-keyfile &quot;&#x2F;run&#x2F;named&#x2F;session.key&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file &quot;data&#x2F;named.run&quot;;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F; 根域名，用于外网解析</span><br><span class="line">zone &quot;.&quot; IN &#123;</span><br><span class="line">	type hint;</span><br><span class="line">	file &quot;named.ca&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; LEAUS Add  添加正向ZONE</span><br><span class="line">zone &quot;ifeidao.com&quot; IN &#123;</span><br><span class="line">        type master;</span><br><span class="line">        file &quot;ifeidao.com&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;添加反向ZONE</span><br><span class="line">zone &quot;40.168.192.in-addr.arpa&quot; IN &#123;</span><br><span class="line">        type master;</span><br><span class="line">        file &quot;192.168.40.zone&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &quot;&#x2F;etc&#x2F;named.rfc1912.zones&quot;;</span><br><span class="line">include &quot;&#x2F;etc&#x2F;named.root.key&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件zone"><a href="#配置文件zone" class="headerlink" title="配置文件zone"></a>配置文件zone</h3><blockquote>
+<p>named.ca 为软件安装自动生成的文件<br>也可以使用命令</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">dig &gt;named.ca</span><br></pre></td></tr></table></figure>
+
+<p>正向解析</p>
+<blockquote>
+<p>/var/named/ifeidao.com</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@       IN SOA ifeidao.com. yw.ifeidao.com  (</span><br><span class="line">                                        0       ; serial</span><br><span class="line">                                        1D      ; refresh</span><br><span class="line">                                        1H      ; retry</span><br><span class="line">                                        1W      ; expire</span><br><span class="line">                                        3H )    ; minimum</span><br><span class="line">        NS      @</span><br><span class="line">        A       117.78.38.80</span><br><span class="line"></span><br><span class="line">@      IN  A    117.78.38.80</span><br><span class="line">www    IN  A    117.78.38.80</span><br><span class="line">docker IN  A    192.168.40.195</span><br><span class="line">kvm    IN  A    192.168.40.190</span><br><span class="line">mail   IN  A    192.168.40.198</span><br></pre></td></tr></table></figure>
+
+<p>反向解析</p>
+<blockquote>
+<p>/var/named/192.168.40.zone</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 3H</span><br><span class="line">@       IN SOA  docker.ifeidao.com.   (</span><br><span class="line">                           0                    ; serial (d. adams)   （序列号）</span><br><span class="line">                           3H                   ; refresh             （3小时更新）</span><br><span class="line">                           15M                  ; retry               （15分钟重试）</span><br><span class="line">                           1W                   ; expiry              （1周）</span><br><span class="line">                           1D )                 ; minimum              （1天）</span><br><span class="line">         IN NS docker.ifeidao.com.</span><br><span class="line">195       IN PTR docker.ifeidao.com.</span><br><span class="line">198       IN PTR ftp.ifeidao.com.</span><br><span class="line">190       IN PTR kvm.ifeidao.com.</span><br><span class="line">198       IN PTR mail.ifeidao.com.</span><br></pre></td></tr></table></figure>
+
+<p>注意：配置文件权限：chomd root:named ifeidao.com</p>
+<h3 id="配置文件和区域文件的测试"><a href="#配置文件和区域文件的测试" class="headerlink" title="配置文件和区域文件的测试"></a>配置文件和区域文件的测试</h3><ol>
+<li>测试named.conf主配置文件</li>
+</ol>
+<p><code>named-checkconf</code>   （如果不显示任何信息表示语法正确 ）</p>
+<ol start="2">
+<li>测试区域文件</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># named-checkzone ifeidao.com /var/named/ifeidao.com</span></span><br><span class="line"><span class="comment"># named-checkzone 40.168.192.in-addr.arpa /var/named/192.168.40.zone</span></span><br></pre></td></tr></table></figure>
+
+<p>（named-checkzone命令第一个参数指定区域名称，第二个参数指定区域文件名称，如果语法正确将显示OK）</p>
+<h3 id="启动服务，使用dig命令来测试是否能够正常解析"><a href="#启动服务，使用dig命令来测试是否能够正常解析" class="headerlink" title="启动服务，使用dig命令来测试是否能够正常解析"></a>启动服务，使用dig命令来测试是否能够正常解析</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl start named</span><br><span class="line">dig docker.ifeidao.com</span><br><span class="line">dig -x 192.168.40.195</span><br><span class="line"></span><br><span class="line">nslookup docker.ifeidao.com</span><br><span class="line"></span><br><span class="line">dig [-t <span class="built_in">type</span>] [-x addr] [name] [@server]</span><br><span class="line">-t: 指定资源类型，用于正解</span><br><span class="line">-x: 指定IP地址，用于反解</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置同步服务器"><a href="#配置同步服务器" class="headerlink" title="配置同步服务器"></a>配置同步服务器</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">        directory &quot;&#x2F;var&#x2F;bind&quot;;</span><br><span class="line">        allow-query     &#123; any; &#125;;</span><br><span class="line">        listen-on port 53 &#123; any; &#125;;</span><br><span class="line">        listen-on-v6 &#123; none; &#125;;</span><br><span class="line">        pid-file &quot;&#x2F;var&#x2F;run&#x2F;named&#x2F;named.pid&quot;;</span><br><span class="line">        recursion yes;</span><br><span class="line">&#125;;</span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file &quot;log&#x2F;named.log&quot;;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F; LEAUS Add  添加正向ZONE</span><br><span class="line">zone &quot;ifeidao.com&quot; IN &#123;</span><br><span class="line">        type slave;</span><br><span class="line">        masters &#123; 192.168.40.202; &#125;;</span><br><span class="line">        file &quot;ifeidao.com&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;添加反向ZONE</span><br><span class="line">zone &quot;40.168.192.in-addr.arpa&quot; IN &#123;</span><br><span class="line">        type slave;</span><br><span class="line">        masters &#123; 192.168.40.202; &#125;;</span><br><span class="line">        file &quot;192.168.40.zone&quot;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="重启服务，看解析文件是否同步"><a href="#重启服务，看解析文件是否同步" class="headerlink" title="重启服务，看解析文件是否同步"></a>重启服务，看解析文件是否同步</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart named</span><br><span class="line">ls /var/<span class="built_in">bind</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ol>
+<li>远端测试-失败</li>
+</ol>
+<p>（Windows）刷新DNS缓存：ipconfig /flushdns<br>执行dig a.demo.com。可以发现无法解析。<br>无法解析的原因是，DNS服务器（bind）默认只允许地址为127.0.0.1/localhost的主机通过DNS服务器进行查询，即DNS服务器本身只能被自己查询。</p>
+<p>配置文件/etc/named.conf需要进行如下修改</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将listen-on port 53 &#123; 127.0.0.1; &#125;;修改为listen-on port 53 &#123; any; &#125;;</span><br><span class="line">将allow-query &#123; localhost; &#125;;修改为allow-query &#123; any; &#125;;</span><br><span class="line">将dnssec-enable yes;修改为dnssec-enable no;</span><br><span class="line">将dnssec-validation yes;修改为dnssec-validation no;</span><br></pre></td></tr></table></figure>
+
+<p>重启named服务：<br>systemctl restart named </p>
+<p>开启防火墙的53端口</p>
+<ol start="2">
+<li>启动服务报错-文件权限不够</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">查看状态：systemctl status named.service</span><br></pre></td></tr></table></figure>
+
+<p>Feb 24 14:58:27 vm002-192-168-40-202 named[6354]: zone ifeidao.com/IN: loading from master file ifeidao.com failed: permission denied<br>Feb 24 14:58:27 vm002-192-168-40-202 named[6354]: zone ifeidao.com/IN: not loaded due to errors.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -l /var/named</span><br><span class="line"></span><br><span class="line">-rw-r--r--. 1 root  root   571 Feb 24 14:49 192.168.40.zone</span><br><span class="line">-rw-r-----. 1 root  named  182 Feb 24 14:57 ifeidao.com</span><br><span class="line">-rw-r-----. 1 root  named 2076 Jan 28  2013 named.ca</span><br><span class="line">-rw-r-----. 1 root  named  152 Dec 15  2009 named.empty</span><br></pre></td></tr></table></figure>
+
+<p>修改文件权限</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chown root:named ifeidao.com</span><br><span class="line">或 chmod +r ifeidao.com</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>bind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chrony时间同步服务配置</title>
+    <url>/2020/04/11/chrony%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h3 id="安装配置chrony"><a href="#安装配置chrony" class="headerlink" title="安装配置chrony"></a>安装配置chrony</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">yum install chrony</span><br><span class="line"><span class="comment"># 启用</span></span><br><span class="line">systemctl <span class="built_in">enable</span> chronyd.service</span><br><span class="line">systemctl restart chronyd.service</span><br><span class="line">systemctl status chronyd.service</span><br><span class="line"><span class="comment"># 设置亚洲时区</span></span><br><span class="line">timedatectl <span class="built_in">set</span>-timezone Asia/Shanghai</span><br><span class="line"><span class="comment"># 启用NTP同步</span></span><br><span class="line">timedatectl <span class="built_in">set</span>-ntp yes</span><br></pre></td></tr></table></figure>
+
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><p>修改chrony.conf</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/chrony.conf</span><br><span class="line">server 192.168.40.253 iburst  <span class="comment">#本地服务ip</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h4><p>修改chrony.conf</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">server 0.asia.pool.ntp.org iburst</span><br><span class="line">server 1.asia.pool.ntp.org iburst</span><br><span class="line">server 2.asia.pool.ntp.org iburst</span><br><span class="line"></span><br><span class="line">server cn.pool.ntp.org iburst</span><br><span class="line">server 0.cn.pool.ntp.org iburst</span><br><span class="line">server 1.cn.pool.ntp.org iburst</span><br><span class="line">server 2.cn.pool.ntp.org iburst</span><br><span class="line">server 3.cn.pool.ntp.org iburst</span><br><span class="line"></span><br><span class="line">allow 192.168.40/24   <span class="comment">#可以访问本地40段</span></span><br></pre></td></tr></table></figure>
+
+<p>安装netstat</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install net-tools</span><br></pre></td></tr></table></figure>
+
+<p>开放端口</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ntp端口(123)</span></span><br><span class="line">firewall-cmd --add-port=123/udp --permanent</span><br><span class="line"><span class="comment"># chrony端口(323)</span></span><br><span class="line">firewall-cmd --add-port=323/udp --permanent</span><br><span class="line"></span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h4 id="chronyc查看"><a href="#chronyc查看" class="headerlink" title="chronyc查看"></a>chronyc查看</h4><p>1.查看时间同步源：</p>
+<p><code>chronyc sources -v</code></p>
+<p>2.查看时间同步源状态：</p>
+<p><code>chronyc sourcestats -v</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chkconfig chronyd on</span><br><span class="line">service chronyd start</span><br><span class="line">service chronyd status</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>chrony</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker bind</title>
+    <url>/2020/04/11/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/docker-bind/</url>
+    <content><![CDATA[<h2 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">FROM alpine:latest</span><br><span class="line">RUN apk --update add <span class="built_in">bind</span></span><br><span class="line">EXPOSE 53 53/udp</span><br><span class="line">ADD start.sh /etc/<span class="built_in">bind</span></span><br><span class="line">CMD [<span class="string">"/etc/bind/start.sh"</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="start-sh"><a href="#start-sh" class="headerlink" title="start.sh"></a>start.sh</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">chown -R named:named /var/<span class="built_in">bind</span>/</span><br><span class="line">chown -R root:named /etc/<span class="built_in">bind</span>/</span><br><span class="line">named -c /etc/<span class="built_in">bind</span>/named.conf -g -u named</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /data/temp/<span class="built_in">bind</span>/conf/</span><br><span class="line">mkdir -p /data/temp/<span class="built_in">bind</span>/zone/<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="conf下文件"><a href="#conf下文件" class="headerlink" title="conf下文件"></a>conf下文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi named.conf   &#x2F;&#x2F;bind配置文件</span><br><span class="line">vi start.sh     &#x2F;&#x2F;启动脚本</span><br><span class="line">chmod +x start.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="zone-下文件"><a href="#zone-下文件" class="headerlink" title="zone 下文件"></a>zone 下文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.40.zone</span><br><span class="line">ifeidao.com  </span><br><span class="line">log         &#x2F;&#x2F;日志</span><br><span class="line">named.ca    &#x2F;&#x2F;个根域&quot;.&quot;，用来解析外网域名</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -dit -p 53:53&#x2F;tcp -p 53:53&#x2F;udp --dns&#x3D;114.114.114.114 -v &#x2F;data&#x2F;temp&#x2F;bind&#x2F;conf&#x2F;:&#x2F;etc&#x2F;bind&#x2F; -v &#x2F;data&#x2F;temp&#x2F;bind&#x2F;zone&#x2F;:&#x2F;var&#x2F;bind&#x2F; --name bind bind</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在使用<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -dit -p 53:53&#x2F;tcp -p 53:53&#x2F;udp -v &#x2F;etc&#x2F;localtime:&#x2F;etc&#x2F;localtime:ro -v &#x2F;data&#x2F;temp&#x2F;bind&#x2F;conf&#x2F;:&#x2F;etc&#x2F;bind&#x2F; -v &#x2F;data&#x2F;temp&#x2F;bind&#x2F;zone&#x2F;:&#x2F;var&#x2F;bind&#x2F; --name bind docker.ifeidao.com:5000&#x2F;bind</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>/data/temp/bind/conf/named.conf<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">        directory &quot;&#x2F;var&#x2F;bind&quot;;</span><br><span class="line">        &#x2F;&#x2F;dump-file       &quot;&#x2F;var&#x2F;bind&#x2F;data&#x2F;cache_dump.db&quot;;</span><br><span class="line">        &#x2F;&#x2F;statistics-file &quot;&#x2F;var&#x2F;bind&#x2F;data&#x2F;named_stats.txt&quot;;</span><br><span class="line">        &#x2F;&#x2F;memstatistics-file &quot;&#x2F;var&#x2F;bind&#x2F;data&#x2F;named_mem_stats.txt&quot;;</span><br><span class="line">        allow-query     &#123; any; &#125;;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;forwarders &#123;</span><br><span class="line">        &#x2F;&#x2F;      123.123.123.123;</span><br><span class="line">        &#x2F;&#x2F;      123.123.123.123;</span><br><span class="line">        &#x2F;&#x2F;&#125;;</span><br><span class="line"></span><br><span class="line">        listen-on port 53 &#123; any; &#125;;</span><br><span class="line">        listen-on-v6 &#123; none; &#125;;</span><br><span class="line"></span><br><span class="line">        pid-file &quot;&#x2F;var&#x2F;run&#x2F;named&#x2F;named.pid&quot;;</span><br><span class="line">	    recursion yes;</span><br><span class="line">        dnssec-enable yes;</span><br><span class="line">        dnssec-validation yes;</span><br><span class="line">        &#x2F;&#x2F;bindkeys-file &quot;&#x2F;etc&#x2F;bind&#x2F;bind.keys&quot;;</span><br><span class="line">        &#x2F;&#x2F;session-keyfile &quot;&#x2F;var&#x2F;run&#x2F;named&#x2F;session.key&quot;;</span><br><span class="line">        &#x2F;* 从服务器  *&#x2F;</span><br><span class="line">        allow-transfer &#123; 192.168.40.201;&#125;;</span><br><span class="line">        &#x2F;* 主动通知从服务器更新 *&#x2F;</span><br><span class="line">        also-notify &#123; 192.168.40.201; &#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file &quot;log&#x2F;named.log&quot;;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;根域名，配置外网解析</span><br><span class="line">zone &quot;.&quot; IN &#123;</span><br><span class="line">        type hint;</span><br><span class="line">        file &quot;named.ca&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; LEAUS Add  添加正向ZONE</span><br><span class="line">zone &quot;ifeidao.com&quot; IN &#123;</span><br><span class="line">        type master;</span><br><span class="line">        file &quot;ifeidao.com&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;添加反向ZONE</span><br><span class="line">zone &quot;40.168.192.in-addr.arpa&quot; IN &#123;</span><br><span class="line">        type master;</span><br><span class="line">        file &quot;192.168.40.zone&quot;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>bind</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos-bind</title>
+    <url>/2020/04/11/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/centos-bind/</url>
+    <content><![CDATA[<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><p>DNS 服务</p>
+<p><img src="centos-bind/sd.jpeg" alt="图片"></p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;redhat-release</span><br><span class="line">CentOS Linux release 7.3.1611 (Core)</span><br></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>安装bind<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install bind</span><br><span class="line"></span><br><span class="line">#bind-chroot</span><br></pre></td></tr></table></figure></li>
+<li>启动服务<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status named</span><br><span class="line">systemctl start named</span><br></pre></td></tr></table></figure></li>
+<li>设置开机启动<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable named</span><br></pre></td></tr></table></figure></li>
+<li>开启防火墙端口<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --add-service&#x3D;dns --permanent</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3></li>
+</ol>
+<p>配置文件</p>
+<blockquote>
+<p>vi /etc/named.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">	&#x2F;&#x2F;修改为any 监听所有IP</span><br><span class="line">	listen-on port 53 &#123; any; &#125;;</span><br><span class="line">	listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">	directory 	&quot;&#x2F;var&#x2F;named&quot;;</span><br><span class="line">	dump-file 	&quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;cache_dump.db&quot;;</span><br><span class="line">	statistics-file &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named_stats.txt&quot;;</span><br><span class="line">	memstatistics-file &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named_mem_stats.txt&quot;;</span><br><span class="line">	&#x2F;&#x2F;修改为any，也可以指定内网IP，DNS查询</span><br><span class="line">	allow-query     &#123; any; &#125;;</span><br><span class="line"></span><br><span class="line">	recursion yes;</span><br><span class="line"></span><br><span class="line">	dnssec-enable yes;</span><br><span class="line">	dnssec-validation yes;</span><br><span class="line"></span><br><span class="line">	&#x2F;* Path to ISC DLV key *&#x2F;</span><br><span class="line">	bindkeys-file &quot;&#x2F;etc&#x2F;named.iscdlv.key&quot;;</span><br><span class="line"></span><br><span class="line">	managed-keys-directory &quot;&#x2F;var&#x2F;named&#x2F;dynamic&quot;;</span><br><span class="line">	&#x2F;* 从服务器  *&#x2F;</span><br><span class="line">	allow-transfer &#123; 192.168.40.201;&#125;;</span><br><span class="line">	&#x2F;* 主动通知从服务器更新 *&#x2F;</span><br><span class="line">	also-notify &#123; 192.168.40.201; &#125;;	</span><br><span class="line">	pid-file &quot;&#x2F;run&#x2F;named&#x2F;named.pid&quot;;</span><br><span class="line">	session-keyfile &quot;&#x2F;run&#x2F;named&#x2F;session.key&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file &quot;data&#x2F;named.run&quot;;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F; 根域名，用于外网解析</span><br><span class="line">zone &quot;.&quot; IN &#123;</span><br><span class="line">	type hint;</span><br><span class="line">	file &quot;named.ca&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; LEAUS Add  添加正向ZONE</span><br><span class="line">zone &quot;ifeidao.com&quot; IN &#123;</span><br><span class="line">        type master;</span><br><span class="line">        file &quot;ifeidao.com&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;添加反向ZONE</span><br><span class="line">zone &quot;40.168.192.in-addr.arpa&quot; IN &#123; </span><br><span class="line">        type master; </span><br><span class="line">        file &quot;192.168.40.zone&quot;; </span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &quot;&#x2F;etc&#x2F;named.rfc1912.zones&quot;;</span><br><span class="line">include &quot;&#x2F;etc&#x2F;named.root.key&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件zone"><a href="#配置文件zone" class="headerlink" title="配置文件zone"></a>配置文件zone</h3><blockquote>
+<p>named.ca 为软件安装自动生成的文件<br>也可以使用命令</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dig &gt;named.ca</span><br></pre></td></tr></table></figure>
+<p>正向解析</p>
+<blockquote>
+<p>/var/named/ifeidao.com</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$TTL 1D</span><br><span class="line">$TTL 1D</span><br><span class="line">@       IN SOA ifeidao.com. yw.ifeidao.com  (</span><br><span class="line">                                        0       ; serial</span><br><span class="line">                                        1D      ; refresh</span><br><span class="line">                                        1H      ; retry</span><br><span class="line">                                        1W      ; expire</span><br><span class="line">                                        3H )    ; minimum</span><br><span class="line">        NS      @</span><br><span class="line">        A       117.78.38.80</span><br><span class="line"></span><br><span class="line">@      IN  A    117.78.38.80</span><br><span class="line">www    IN  A    117.78.38.80</span><br><span class="line">docker IN  A    192.168.40.195</span><br><span class="line">kvm    IN  A    192.168.40.190    </span><br><span class="line">mail   IN  A    192.168.40.198</span><br></pre></td></tr></table></figure>
+<p>反向解析</p>
+<blockquote>
+<p>/var/named/192.168.40.zone</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$TTL 3H</span><br><span class="line">@       IN SOA  docker.ifeidao.com.   (</span><br><span class="line">                           0                    ; serial (d. adams)   （序列号）</span><br><span class="line">                           3H                   ; refresh             （3小时更新）</span><br><span class="line">                           15M                  ; retry               （15分钟重试）</span><br><span class="line">                           1W                   ; expiry              （1周）</span><br><span class="line">                           1D )                 ; minimum              （1天）</span><br><span class="line">         IN NS docker.ifeidao.com.</span><br><span class="line">195       IN PTR docker.ifeidao.com.</span><br><span class="line">198       IN PTR ftp.ifeidao.com.</span><br><span class="line">190       IN PTR kvm.ifeidao.com.</span><br><span class="line">198       IN PTR mail.ifeidao.com.</span><br></pre></td></tr></table></figure>
+<p>注意：配置文件权限：chomd root:named ifeidao.com</p>
+<h3 id="配置文件和区域文件的测试"><a href="#配置文件和区域文件的测试" class="headerlink" title="配置文件和区域文件的测试"></a>配置文件和区域文件的测试</h3><ol>
+<li>测试named.conf主配置文件</li>
+</ol>
+<p><code>named-checkconf</code>   （如果不显示任何信息表示语法正确 ）<br>2. 测试区域文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># named-checkzone ifeidao.com &#x2F;var&#x2F;named&#x2F;ifeidao.com</span><br><span class="line"># named-checkzone 40.168.192.in-addr.arpa &#x2F;var&#x2F;named&#x2F;192.168.40.zone</span><br></pre></td></tr></table></figure>
+<p>（named-checkzone命令第一个参数指定区域名称，第二个参数指定区域文件名称，如果语法正确将显示OK）</p>
+<h3 id="启动服务，使用dig命令来测试是否能够正常解析"><a href="#启动服务，使用dig命令来测试是否能够正常解析" class="headerlink" title="启动服务，使用dig命令来测试是否能够正常解析"></a>启动服务，使用dig命令来测试是否能够正常解析</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start named</span><br><span class="line">dig docker.ifeidao.com</span><br><span class="line">dig -x 192.168.40.195</span><br><span class="line"></span><br><span class="line">nslookup docker.ifeidao.com</span><br><span class="line"></span><br><span class="line">dig [-t type] [-x addr] [name] [@server]</span><br><span class="line">-t: 指定资源类型，用于正解</span><br><span class="line">-x: 指定IP地址，用于反解</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置同步服务器"><a href="#配置同步服务器" class="headerlink" title="配置同步服务器"></a>配置同步服务器</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">        directory &quot;&#x2F;var&#x2F;bind&quot;;</span><br><span class="line">        allow-query     &#123; any; &#125;;</span><br><span class="line">        listen-on port 53 &#123; any; &#125;;</span><br><span class="line">        listen-on-v6 &#123; none; &#125;;</span><br><span class="line">        pid-file &quot;&#x2F;var&#x2F;run&#x2F;named&#x2F;named.pid&quot;;</span><br><span class="line">        recursion yes;</span><br><span class="line">&#125;;</span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file &quot;log&#x2F;named.log&quot;;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F; LEAUS Add  添加正向ZONE</span><br><span class="line">zone &quot;ifeidao.com&quot; IN &#123;</span><br><span class="line">        type slave;</span><br><span class="line">        masters &#123; 192.168.40.202; &#125;;</span><br><span class="line">        file &quot;ifeidao.com&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;添加反向ZONE</span><br><span class="line">zone &quot;40.168.192.in-addr.arpa&quot; IN &#123; </span><br><span class="line">        type slave;</span><br><span class="line">        masters &#123; 192.168.40.202; &#125;;</span><br><span class="line">        file &quot;192.168.40.zone&quot;; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="重启服务，看解析文件是否同步："><a href="#重启服务，看解析文件是否同步：" class="headerlink" title="重启服务，看解析文件是否同步："></a>重启服务，看解析文件是否同步：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart named</span><br><span class="line">ls &#x2F;var&#x2F;bind</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ol>
+<li>远端测试-失败</li>
+</ol>
+<p>（Windows）刷新DNS缓存：ipconfig /flushdns<br>执行dig a.demo.com。可以发现无法解析。<br>无法解析的原因是，DNS服务器（bind）默认只允许地址为127.0.0.1/localhost的主机通过DNS服务器进行查询，即DNS服务器本身只能被自己查询。</p>
+<p>配置文件/etc/named.conf需要进行如下修改</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将listen-on port 53 &#123; 127.0.0.1; &#125;;修改为listen-on port 53 &#123; any; &#125;;</span><br><span class="line">将allow-query &#123; localhost; &#125;;修改为allow-query &#123; any; &#125;;</span><br><span class="line">将dnssec-enable yes;修改为dnssec-enable no;</span><br><span class="line">将dnssec-validation yes;修改为dnssec-validation no;</span><br></pre></td></tr></table></figure>
+<p>重启named服务：<br>systemctl restart named </p>
+<p>开启防火墙的53端口</p>
+<ol start="2">
+<li>启动服务报错-文件权限不够</li>
+</ol>
+<p>查看状态：systemctl status named.service</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Feb 24 14:58:27 vm002-192-168-40-202 named[6354]: zone ifeidao.com&#x2F;IN: loading from master file ifeidao.com failed: permission denied</span><br><span class="line">Feb 24 14:58:27 vm002-192-168-40-202 named[6354]: zone ifeidao.com&#x2F;IN: not loaded due to errors.</span><br></pre></td></tr></table></figure>
+<p>ls -l /var/named</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-rw-r--r--. 1 root  root   571 Feb 24 14:49 192.168.40.zone</span><br><span class="line">-rw-r-----. 1 root  named  182 Feb 24 14:57 ifeidao.com</span><br><span class="line">-rw-r-----. 1 root  named 2076 Jan 28  2013 named.ca</span><br><span class="line">-rw-r-----. 1 root  named  152 Dec 15  2009 named.empty</span><br></pre></td></tr></table></figure>
+<p>修改文件权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chown root:named ifeidao.com</span><br><span class="line">或 chmod +r ifeidao.com</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>bind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo next+置顶标签</title>
+    <url>/2019/12/06/hexo/%E7%BD%AE%E9%A1%B6%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h1><p>记录整理开始</p>
+<p>已经有修改后支持置顶的仓库，可以直接用以下命令安装。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+
+<p>然后在需要置顶的文章的Front-matter中加上top: true即可。</p>
+<p>比如：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo</span><br><span class="line">date: 2019</span><br><span class="line">categories: 博客</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h1 id="设置置顶标志"><a href="#设置置顶标志" class="headerlink" title="设置置顶标志"></a>设置置顶标志</h1><p>打开： <code>/blog/themes/next/layout/_macro</code> 目录下的 <code>post.swig</code>文件，定位到 <code>&lt;div class=&quot;post-meta&quot;&gt;</code> 标签下，<br>插入如下代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> post.top %&#125;</span><br><span class="line">  &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-thumb-tack"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  &lt;font color=<span class="number">7</span>D26CD&gt;置顶&lt;<span class="regexp">/font&gt;</span></span><br><span class="line"><span class="regexp">  &lt;span class="post-meta-divider"&gt;|&lt;/</span>span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+<p><img src="images/hexo/hexo-1.png" alt="效果图"></p>
+]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开始</title>
+    <url>/2019/12/06/%E7%BD%AE%E9%A1%B6/</url>
+    <content><![CDATA[<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>记录整理开始</p>
+<h1 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h1><p>服务器部署搭建 linux（centos，debian）</p>
+<h1 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h1><p><a href="https://www.aliyun.com/minisite/goods?userCode=j7u9ilye&from=singlemessage" target="_blank" rel="noopener">推广地址</a></p>
+<h1 id="评价系统"><a href="#评价系统" class="headerlink" title="评价系统"></a><a href="https://leancloud.cn/" target="_blank" rel="noopener">评价系统</a></h1>]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>excel拆分成多个工作表</title>
+    <url>/2019/11/19/execl%E5%88%86%E5%89%B2%E6%88%90%E5%A4%9A%E4%B8%AA%E5%B7%A5%E4%BD%9C%E8%A1%A8/</url>
+    <content><![CDATA[<h1 id="如何将一个Excel工作表的数据按一列的关键字拆分成多个工作表？"><a href="#如何将一个Excel工作表的数据按一列的关键字拆分成多个工作表？" class="headerlink" title="如何将一个Excel工作表的数据按一列的关键字拆分成多个工作表？"></a>如何将一个Excel工作表的数据按一列的关键字拆分成多个工作表？</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Sub learningexcel()</span><br><span class="line"> Dim Arr, Rng As Range, Sht As Worksheet, Dic As Object</span><br><span class="line"> Dim k, t, Str As String, i As Long, lc As Long</span><br><span class="line"> Application.ScreenUpdating &#x3D; False &#39;关闭屏幕更新</span><br><span class="line"> Arr &#x3D; Range(&quot;A1&quot;).CurrentRegion.Value</span><br><span class="line"> lc &#x3D; UBound(Arr, 2) &#39;求取最后一列的列号</span><br><span class="line"> Set Rng &#x3D; Rows(1) &#39;标题行</span><br><span class="line"> Set Dic &#x3D; CreateObject(&quot;Scripting.Dictionary&quot;) &#39;创建字典</span><br><span class="line"> For i &#x3D; 2 To UBound(Arr)</span><br><span class="line"> Str &#x3D; Arr(i, 3) &#39;订单号，关键字，如果要换列，改这个数字即可</span><br><span class="line"> If Not Dic.Exists(Str) Then &#39;如果字典没有关键字</span><br><span class="line"> Set Dic(Str) &#x3D; Cells(i, 1).Resize(, lc) &#39;把当前行装入到字典中</span><br><span class="line"> Else &#39;否则(字典中存在关键字)</span><br><span class="line"> Set Dic(Str) &#x3D; Union(Dic(Str), Cells(i, 1).Resize(, lc)) &#39;把行连合起来</span><br><span class="line"> End If</span><br><span class="line"> Next</span><br><span class="line"> k &#x3D; Dic.Keys &#39;字典关键字集合</span><br><span class="line"> t &#x3D; Dic.Items &#39;字典项目集合</span><br><span class="line"> On Error Resume Next</span><br><span class="line"> With Sheets</span><br><span class="line"> For i &#x3D; 0 To Dic.Count - 1 &#39;循环关键字的个数</span><br><span class="line"> Set Sht &#x3D; .Item(k(i)) &#39;给变量赋值(工作表名为关键字)</span><br><span class="line"> If Sht Is Nothing Then &#39;该工作表不存在则插入一个空工作表</span><br><span class="line"> .Add(After:&#x3D;.Item(.Count)).Name &#x3D; k(i) &#39;新建的工作表将置于所有工作表之后，并命名为关键字</span><br><span class="line"> Set Sht &#x3D; ActiveSheet &#39;活动工作表给变量</span><br><span class="line"> Else &#39;否则</span><br><span class="line"> Sht.Cells.Clear &#39;清除工作中所有内容和格式</span><br><span class="line"> End If</span><br><span class="line"> Rng.Copy Sht.Range(&quot;A1&quot;) &#39;把标题写入第一行</span><br><span class="line"> t(i).Copy Sht.Range(&quot;A2&quot;) &#39;写入其他内容</span><br><span class="line"> Sht.Cells.EntireColumn.AutoFit &#39;自动调整全工作表单元格的列宽</span><br><span class="line"> Set Sht &#x3D; Nothing &#39;变量处于初始状态</span><br><span class="line"> Next</span><br><span class="line"> End With</span><br><span class="line"> Sheets(1).Activate &#39;第1个工作表处于激活状态</span><br><span class="line"> Application.ScreenUpdating &#x3D; True &#39;打开屏幕更新</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸问题1：至于有了vba代码如何在excel中运行？"><a href="#延伸问题1：至于有了vba代码如何在excel中运行？" class="headerlink" title="延伸问题1：至于有了vba代码如何在excel中运行？"></a>延伸问题1：至于有了vba代码如何在excel中运行？</h2><p>解答：</p>
+<ol>
+<li>ALT+F11，进入VBE对话框</li>
+<li>右击-插入-模块</li>
+<li>输入代码(使用已有代码，直接复制粘贴进入即可），修改下</li>
+<li>按F5运行或者点击三角按钮运行代码</li>
+<li>查看效果</li>
+</ol>
+<p><a href="http://jingyan.baidu.com/article/d7130635071d2313fdf47585.html" target="_blank" rel="noopener">excel将一个工作表根据条件拆分成多个工作表</a></p>
+]]></content>
+      <categories>
+        <category>excel</category>
+      </categories>
+      <tags>
+        <tag>excel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos 更新docker</title>
+    <url>/2019/11/19/docker/docker-update/</url>
+    <content><![CDATA[<h1 id="centos-更新docker"><a href="#centos-更新docker" class="headerlink" title="centos 更新docker"></a>centos 更新docker</h1><ul>
+<li>docker centos7 官网安装地址<br><a href="https://docs.docker.com/engine/installation/linux/centos/" target="_blank" rel="noopener">https://docs.docker.com/engine/installation/linux/centos/</a></li>
+</ul>
+<ul>
+<li><p>卸载原有docker(1.9.1)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum erase docker</span><br><span class="line">yum erase docker-selinux</span><br><span class="line">yum erase docker-common</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add the yum repo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo tee &#x2F;etc&#x2F;yum.repos.d&#x2F;docker.repo &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">[dockerrepo]</span><br><span class="line">name&#x3D;Docker Repository</span><br><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;yum.dockerproject.org&#x2F;repo&#x2F;main&#x2F;centos&#x2F;$releasever&#x2F;</span><br><span class="line">enabled&#x3D;1</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;https:&#x2F;&#x2F;yum.dockerproject.org&#x2F;gpg</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></li>
+<li><p>安装docker</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install docker-engine</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Verifying  : docker-engine-1.11.1-1.el7.centos.x86_64</span><br><span class="line">Verifying  : docker-engine-selinux-1.11.1-1.el7.centos.noarch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动docker</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker UI</title>
+    <url>/2019/11/19/docker/dockerUI/</url>
+    <content><![CDATA[<h3 id="docker-github-address"><a href="#docker-github-address" class="headerlink" title="docker github address"></a>docker github address</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;kevana&#x2F;ui-for-docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像下载："><a href="#镜像下载：" class="headerlink" title="镜像下载："></a>镜像下载：</h3><p>最新版本：UI For Docker<br>docker pull uifd/ui-for-docker</p>
+<h3 id="启动容器："><a href="#启动容器：" class="headerlink" title="启动容器："></a>启动容器：</h3><p>使用本地sock<br>docker run -d -p 9000:9000 –privileged -v /var/run/docker.sock:/var/run/docker.sock uifd/ui-for-docker</p>
+<p>使用tcp socket （测试的时候连接没有信息）<br>docker run -d -p 9002:9000 –privileged uifd/ui-for-docker -e <a href="http://127.0.0.1:2375" target="_blank" rel="noopener">http://127.0.0.1:2375</a></p>
+<p>访问地址：<br>http://<dockerd host ip>:9000</p>
+<p>其他UI<br>docker run -d -p 10086:10086 -v /var/run/docker.sock:/var/run/docker.sock tobegit3hub/seagull</p>
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker dnsmasq</title>
+    <url>/2019/11/19/docker/docker-dnsmasq/</url>
+    <content><![CDATA[<h3 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FROM alpine:3.4</span><br><span class="line">RUN apk --no-cache add dnsmasq</span><br><span class="line">EXPOSE 53 53&#x2F;udp</span><br><span class="line">ENTRYPOINT [&quot;dnsmasq&quot;, &quot;-k&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h2><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -d -p 53:53/tcp -p 53:53/udp --<span class="built_in">cap</span>-add=NET_ADMIN -v /data/dns/conf:/home -v /data/dns/dnsmasq.conf:/etc/dnsmasq.conf --name dns-server andyshinn/dnsmasq:2.75</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置DNS服务"><a href="#配置DNS服务" class="headerlink" title="配置DNS服务"></a>配置DNS服务</h3><ul>
+<li>新建目录<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;data&#x2F;dns&#x2F;conf&#x2F;dnsmasq.d</span><br><span class="line">mkdir -p &#x2F;data&#x2F;dns&#x2F;conf&#x2F;log</span><br></pre></td></tr></table></figure></li>
+<li>修改dnsmasq配置文件<blockquote>
+<p>vi /data/dns/dnsmasq.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">resolv-file&#x3D;&#x2F;home&#x2F;dnsmasq-resolv.conf</span><br><span class="line">addn-hosts&#x3D;&#x2F;home&#x2F;dnsmasq.hosts</span><br><span class="line">log-queries</span><br><span class="line">log-facility&#x3D;&#x2F;home&#x2F;log&#x2F;dnsmasq.log</span><br><span class="line">conf-dir&#x3D;&#x2F;home&#x2F;dnsmasq.d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vi /data/dns/conf/resolv.dnsmasq</p>
+</blockquote>
+</li>
+</ul>
+<p>添加内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 192.168.40.206</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置本地解析规则。新建配置文件</li>
+</ul>
+<blockquote>
+<p>vi /data/dns/conf/dnsmasq.hosts</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">172.20.2.14 master</span><br><span class="line">172.20.2.15 slave15</span><br><span class="line">172.20.2.16 slave16</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重启容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker restart dns-server</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="结果报错："><a href="#结果报错：" class="headerlink" title="结果报错："></a>结果报错：</h3><p>docker: Error response from daemon: failed to create endpoint dns-server on network bridge: Error starting userland proxy: listen tcp 0.0.0.0:53: bind: address already in use.</p>
+<p>dns服务默认是用的53端口被占用了。查看本机端口占用情况：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -lnp|grep 53</span><br></pre></td></tr></table></figure>
+<p>停止dnsmasq服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stop dnsmasq</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>dnsmasq</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos chrony</title>
+    <url>/2019/11/19/centos/centos-chrony/</url>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Chrony是一个开源的自由软件，它能保持系统时钟与时钟服务器（NTP）同步，让时间保持精确。</p>
+<p>它由两个程序组成：chronyd和chronyc。</p>
+<blockquote>
+<p>chronyd是一个在系统后台运行的守护进程。他根据网络上其他时间服务器时间来测量本机时间的偏移量从而调整系统时钟。对于孤立系统，用户可以手动周期性的输入正确时间（通过chronyc）。在这两种情况下，chronyd决定计算机快慢的比例，并加以纠正。chronyd实现了NTP协议并且可以作为服务器或客户端。<br>chronyc是用来监控chronyd性能和配置其参数的用户界面。</p>
+</blockquote>
+<h3 id="安装、配置"><a href="#安装、配置" class="headerlink" title="安装、配置"></a>安装、配置</h3><p>centos 7 默认已经安装</p>
+<ul>
+<li>安装命令<br><code>yum install chrony</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> chronyd.service</span><br><span class="line">systemctl restart chronyd.service</span><br><span class="line">systemctl status chronyd.service</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>查看时间同步源：</li>
+</ol>
+<p><code>chronyc sources -v</code></p>
+<ol start="2">
+<li>查看时间同步源状态：</li>
+</ol>
+<p><code>chronyc sourcestats -v</code></p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ol>
+<li>查看配置文件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep ^[^#] &#x2F;etc&#x2F;chrony.conf </span><br><span class="line"></span><br><span class="line">server 0.centos.pool.ntp.org iburst</span><br><span class="line">server 1.centos.pool.ntp.org iburst</span><br><span class="line">server 2.centos.pool.ntp.org iburst</span><br><span class="line">server 3.centos.pool.ntp.org iburst</span><br><span class="line">stratumweight 0</span><br><span class="line">driftfile &#x2F;var&#x2F;lib&#x2F;chrony&#x2F;drift</span><br><span class="line">rtcsync</span><br><span class="line">makestep 10 3</span><br><span class="line">bindcmdaddress 127.0.0.1</span><br><span class="line">bindcmdaddress ::1</span><br><span class="line">keyfile &#x2F;etc&#x2F;chrony.keys</span><br><span class="line">commandkey 1</span><br><span class="line">generatecommandkey</span><br><span class="line">noclientlog</span><br><span class="line">logchange 0.5</span><br><span class="line">logdir &#x2F;var&#x2F;log&#x2F;chrony</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>修改配置文件添加：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server 192.168.40.202 iburst  #本地服务ip</span><br></pre></td></tr></table></figure></li>
+<li>ntp服务配置修改<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">allow 192.168.40&#x2F;24   #可以访问本地40段</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ol start="2">
+<li>当Chrony启动时，它会读取/etc/chrony.conf配置文件中的设置。CentOS 7操作系统上最重要的设置有：</li>
+</ol>
+<p>server - 该参数可以多次用于添加时钟服务器，必须以”server “格式使用。一般而言，你想添加多少服务器，就可以添加多少服务器。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server 0.centos.pool.ntp.org</span><br><span class="line">server 3.europe.pool.ntp.org</span><br></pre></td></tr></table></figure>
+<p>stratumweight - stratumweight指令设置当chronyd从可用源中选择同步源时，每个层应该添加多少距离到同步距离。默认情况下，CentOS中设置为0，让chronyd在选择源时忽略源的层级。</p>
+<p>driftfile - chronyd程序的主要行为之一，就是根据实际时间计算出计算机增减时间的比率，将它记录到一个文件中是最合理的，它会在重启后为系统时钟作出补偿，甚至可能的话，会从时钟服务器获得较好的估值。</p>
+<p>rtcsync - rtcsync指令将启用一个内核模式，在该模式中，系统时间每11分钟会拷贝到实时时钟（RTC）。</p>
+<p>allow / deny - 这里你可以指定一台主机、子网，或者网络以允许或拒绝NTP连接到时间服务器。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">allow 192.168.4.5</span><br><span class="line">deny 192.168&#x2F;16</span><br></pre></td></tr></table></figure>
+<p>cmdallow / cmddeny - 跟上面相类似，只是你可以指定哪个IP地址或哪台主机可以通过chronyd使用控制命令</p>
+<p>bindcmdaddress - 该指令允许你限制chronyd监听哪个网络接口的命令包（由chronyc执行）。该指令通过cmddeny机制提供了一个除上述限制以外可用的额外的访问控制等级。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bindcmdaddress 127.0.0.1</span><br><span class="line">bindcmdaddress ::1</span><br></pre></td></tr></table></figure>
+<p>makestep - 通常，chronyd将根据需求通过减慢或加速时钟，使得系统逐步纠正所有时间偏差。在某些特定情况下，系统时钟可能会漂移过快，导致该调整过程消耗很长的时间来纠正系统时钟。该指令强制chronyd在调整期大于某个阀值时步进调整系统时钟，但只有在因为chronyd启动时间超过指定限制（可使用负值来禁用限制），没有更多时钟更新时才生效。</p>
+]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>chrony</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos ntp</title>
+    <url>/2019/11/19/centos/centos-ntp/</url>
+    <content><![CDATA[<h3 id="配置NTP时间服务器"><a href="#配置NTP时间服务器" class="headerlink" title="配置NTP时间服务器"></a>配置NTP时间服务器</h3><p><a href="http://cn.linux.vbird.org/linux_server/0440ntp_2.php" target="_blank" rel="noopener">鸟哥网址</a></p>
+<h4 id="一-安装ntp软件"><a href="#一-安装ntp软件" class="headerlink" title="一. 安装ntp软件"></a>一. 安装ntp软件</h4><ol>
+<li>检查是否安装了ntp相关包。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep ntp</span><br></pre></td></tr></table></figure></li>
+<li>安装ntp软件。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install ntp</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="二-参数讲解"><a href="#二-参数讲解" class="headerlink" title="二. 参数讲解"></a>二. 参数讲解</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ignore  ：关闭所有的 NTP 联机服务</span><br><span class="line">nomodify：客户端不能更改服务端的时间参数，但是客户端可以通过服务端进行网络校时。</span><br><span class="line">notrust ：客户端除非通过认证，否则该客户端来源将被视为不信任子网</span><br><span class="line">noquery ：不提供客户端的时间查询：用户端不能使用ntpq，ntpc等命令来查询ntp服务器</span><br><span class="line">notrap ：不提供trap远端登陆：拒绝为匹配的主机提供模式 6 控制消息陷阱服务。陷阱服务是 ntpdq 控制消息协议的子系统，用于远程事件日志记录程序。</span><br><span class="line">nopeer ：用于阻止主机尝试与服务器对等，并允许欺诈性服务器控制时钟</span><br><span class="line">kod ： 访问违规时发送 KoD 包。</span><br></pre></td></tr></table></figure>
+
+<h4 id="三-修改配置文件"><a href="#三-修改配置文件" class="headerlink" title="三.修改配置文件"></a>三.修改配置文件</h4><ol>
+<li>查看未修改的配置文件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># grep ^[^#] &#x2F;etc&#x2F;ntp.conf   </span><br><span class="line">driftfile &#x2F;var&#x2F;lib&#x2F;ntp&#x2F;drift</span><br><span class="line">restrict default nomodify notrap nopeer noquery</span><br><span class="line">restrict 127.0.0.1</span><br><span class="line">restrict ::1</span><br><span class="line">server 0.centos.pool.ntp.org iburst</span><br><span class="line">server 1.centos.pool.ntp.org iburst</span><br><span class="line">server 2.centos.pool.ntp.org iburst</span><br><span class="line">server 3.centos.pool.ntp.org iburst</span><br><span class="line">includefile &#x2F;etc&#x2F;ntp&#x2F;crypto&#x2F;pw</span><br><span class="line">keys &#x2F;etc&#x2F;ntp&#x2F;keys</span><br><span class="line">disable monitor</span><br></pre></td></tr></table></figure></li>
+<li>设置允许任何IP的客户机都可以进行时间同步（修改后的配置文件）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># grep ^[^#] &#x2F;etc&#x2F;ntp.conf   </span><br><span class="line"></span><br><span class="line">restrict default nomodify notrap</span><br></pre></td></tr></table></figure></li>
+<li>只允许192.168.1.0网段的客户机进行时间同步（修改后的配置文件）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># grep ^[^#] &#x2F;etc&#x2F;ntp.conf  </span><br><span class="line"></span><br><span class="line">restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="四-启动NTP服务和防火墙"><a href="#四-启动NTP服务和防火墙" class="headerlink" title="四.启动NTP服务和防火墙"></a>四.启动NTP服务和防火墙</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start ntpd</span><br><span class="line">systemctl enable ntpd</span><br><span class="line">firewall-cmd --add-port&#x3D;123&#x2F;udp --permanen</span><br><span class="line"></span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;ntpd             #允许BIOS与系统时间同步，添加下面一行。</span><br><span class="line">SYNC_HWCLOCK&#x3D;yes</span><br></pre></td></tr></table></figure>
+<h4 id="五-检测NTP"><a href="#五-检测NTP" class="headerlink" title="五.检测NTP"></a>五.检测NTP</h4><p>1.检测NTP服务是否运行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># netstat -tlunp | grep ntp</span><br><span class="line">udp        0      0 192.168.1.101:123       0.0.0.0:*                           2563&#x2F;ntpd          </span><br><span class="line">udp        0      0 127.0.0.1:123           0.0.0.0:*                           2563&#x2F;ntpd          </span><br><span class="line">udp        0      0 0.0.0.0:123             0.0.0.0:*                           2563&#x2F;ntpd          </span><br><span class="line">udp6       0      0 fe80::20c:29ff:fe7b:123 :::*                                2563&#x2F;ntpd          </span><br><span class="line">udp6       0      0 ::1:123                 :::*                                2563&#x2F;ntpd          </span><br><span class="line">udp6       0      0 :::123                  :::*                                2563&#x2F;ntpd</span><br></pre></td></tr></table></figure>
+<p>2.查看ntp服务器有无和上层ntp连通</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ntpstat</span><br><span class="line">synchronised to NTP server (120.25.108.11) at stratum 3</span><br><span class="line">   time correct to within 99 ms</span><br><span class="line">   polling server every 64 s</span><br></pre></td></tr></table></figure>
+<p>3.查看ntp服务器与上层ntp的状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ntpq -p</span><br><span class="line">     remote           refid      st t when poll reach   delay   offset  jitter</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> news.neu.edu.cn .INIT.          16 u    -   64    0    0.000    0.000   0.000</span><br><span class="line">x202.118.1.130   202.118.1.47     2 u    7   64  377  153.659    9.605  19.941</span><br><span class="line">*time4.aliyun.co 10.137.38.86     2 u   10   64  377   39.666  -47.661  15.944</span><br><span class="line">remote   - 本机和上层ntp的ip或主机名，“+”表示优先，“*”表示次优先</span><br><span class="line">refid    - 参考上一层ntp主机地址</span><br><span class="line">st       - stratum阶层</span><br><span class="line">when     - 多少秒前曾经同步过时间</span><br><span class="line">poll     - 下次更新在多少秒后</span><br><span class="line">reach    - 已经向上层ntp服务器要求更新的次数</span><br><span class="line">delay    - 网络延迟</span><br><span class="line">offset   - 时间补偿</span><br><span class="line">jitter   - 系统时间与bios时间差</span><br></pre></td></tr></table></figure>
+<h4 id="六-配置时间同步客户机"><a href="#六-配置时间同步客户机" class="headerlink" title="六.配置时间同步客户机"></a>六.配置时间同步客户机</h4><p>1.执行ntpdate命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ntpdate 192.168.1.101 #192.168.1.101为ntp服务器IP地址</span><br></pre></td></tr></table></figure>
+<p>2.写入BIOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hclock -w</span><br></pre></td></tr></table></figure>
+<p>3.crond服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;crontab</span><br><span class="line">30 8 * * * root &#x2F;usr&#x2F;sbin&#x2F;ntpdate 192.168.40.202; &#x2F;sbin&#x2F;hwclock -w</span><br></pre></td></tr></table></figure>
+<p>4.重启crond服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service crond restart</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>ntp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos-dnsmasq</title>
+    <url>/2019/11/19/centos/centos-dnsmasq/</url>
+    <content><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install dnsmasq</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp &#x2F;etc&#x2F;resolv.conf &#x2F;etc&#x2F;dnsmasq-resolv.conf</span><br><span class="line">cp &#x2F;etc&#x2F;hosts &#x2F;etc&#x2F;dnsmasq.hosts</span><br></pre></td></tr></table></figure>
+
+
+<p>查看配置文件</p>
+<p><code>grep ^[^#] /etc/dnsmasq.conf</code></p>
+<blockquote>
+<p>/etc/dnsmasq.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">resolv-file&#x3D;&#x2F;etc&#x2F;dnsmasq-resolv.conf</span><br><span class="line">addn-hosts&#x3D;&#x2F;etc&#x2F;dnsmasq.hosts</span><br><span class="line">log-queries</span><br><span class="line">log-facility&#x3D;&#x2F;var&#x2F;log&#x2F;dnsmasq.log</span><br><span class="line">conf-dir&#x3D;&#x2F;etc&#x2F;dnsmasq.d</span><br></pre></td></tr></table></figure>
+<p>其他配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 不要转发纯名称（不带点或域部分）</span><br><span class="line">domain-needed</span><br><span class="line"># 切勿在非路由地址空间中转发地址</span><br><span class="line">bogus-priv</span><br><span class="line"># 查询每个服务器严格按照resolv.conf中的顺序</span><br><span class="line">strict-order</span><br><span class="line"># 取消注释强制dnsmasq尝试每个查询每个服务器严格按照它们在&#x2F;etc&#x2F;resolv.conf中显示的顺序</span><br><span class="line">server&#x3D;&#x2F;server.education&#x2F;10.0.0.10</span><br><span class="line"># 如果你想有一个域自动添加到主机文件中的简单名称</span><br><span class="line">expand-hosts</span><br><span class="line"># 定义域名</span><br><span class="line">domain&#x3D;srv.world</span><br><span class="line"># 记录每个DNS查询</span><br><span class="line">log-queries</span><br><span class="line">#DHCP租约时间</span><br><span class="line">local-ttl&#x3D;600　</span><br><span class="line">#缓存条数</span><br><span class="line">cache-size&#x3D;10000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>vi /etc/dnsmasq-resolv.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nameserver 192.168.40.206</span><br><span class="line">nameserver 114.114.114.114</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vi /etc/dnsmasq.hosts<br>本地域名配置文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.40.195 docker.ifeidao.com</span><br><span class="line">192.168.40.201 test1.ifeidao.com</span><br><span class="line">192.168.40.202 test2.ifeidao.com</span><br><span class="line">192.168.40.203 test3.ifeidao.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编辑支持泛域名的配置文件/etc/dnsmasq.d/address.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">address&#x3D;&#x2F;www.taobao.com&#x2F;127.0.0.1　　#正向解析</span><br><span class="line">ptr-record&#x3D;127.0.0.1.in-addr.arpa,www.taobao.com    #反向解析（可选）</span><br><span class="line"></span><br><span class="line">address&#x3D;&#x2F;baidu.com&#x2F;127.0.0.1    #泛域名解析</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart dnsmasq </span><br><span class="line">systemctl status dnsmasq</span><br></pre></td></tr></table></figure>
+<p>开机启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable dnsmasq</span><br></pre></td></tr></table></figure>
+
+<h3 id="开放防火墙"><a href="#开放防火墙" class="headerlink" title="开放防火墙"></a>开放防火墙</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --add-service&#x3D;dns --permanent </span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看端口"><a href="#查看端口" class="headerlink" title="查看端口"></a>查看端口</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -antp |grep tcp</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>安装 dig</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install bing-utils</span><br><span class="line">dig docker.ifeidao.com</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><p>配置日志轮转，编辑/etc/logrotate.d/dnsmasq</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;var&#x2F;log&#x2F;dnsmasq.log &#123;</span><br><span class="line">    daily</span><br><span class="line">    copytruncate</span><br><span class="line">    missingok</span><br><span class="line">    rotate 30</span><br><span class="line">    compress</span><br><span class="line">    notifempty</span><br><span class="line">    dateext</span><br><span class="line">    size 200M</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>dnsmasq</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="我的运维，我的生活">
+<meta property="og:type" content="website">
+<meta property="og:title" content="shy blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="shy blog">
+<meta property="og:description" content="我的运维，我的生活">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="shy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>shy blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shy blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">shy记录博客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-games">
+
+    <a href="/games" rel="section"><i class="fa fa-fw fa-gamepad"></i>games</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/docker/dockerUI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="shy">
+      <meta itemprop="description" content="我的运维，我的生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shy blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/docker/dockerUI/" class="post-title-link" itemprop="url">docker UI</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 11:02:08" itemprop="dateCreated datePublished" datetime="2019-11-19T11:02:08+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-02-21 12:24:06" itemprop="dateModified" datetime="2017-02-21T12:24:06+08:00">2017-02-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>440</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="docker-github-address"><a href="#docker-github-address" class="headerlink" title="docker github address"></a>docker github address</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;kevana&#x2F;ui-for-docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像下载："><a href="#镜像下载：" class="headerlink" title="镜像下载："></a>镜像下载：</h3><p>最新版本：UI For Docker<br>docker pull uifd/ui-for-docker</p>
+<h3 id="启动容器："><a href="#启动容器：" class="headerlink" title="启动容器："></a>启动容器：</h3><p>使用本地sock<br>docker run -d -p 9000:9000 –privileged -v /var/run/docker.sock:/var/run/docker.sock uifd/ui-for-docker</p>
+<p>使用tcp socket （测试的时候连接没有信息）<br>docker run -d -p 9002:9000 –privileged uifd/ui-for-docker -e <a href="http://127.0.0.1:2375" target="_blank" rel="noopener">http://127.0.0.1:2375</a></p>
+<p>访问地址：<br>http://<dockerd host ip>:9000</p>
+<p>其他UI<br>docker run -d -p 10086:10086 -v /var/run/docker.sock:/var/run/docker.sock tobegit3hub/seagull</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/docker/docker-dnsmasq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="shy">
+      <meta itemprop="description" content="我的运维，我的生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shy blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/docker/docker-dnsmasq/" class="post-title-link" itemprop="url">docker dnsmasq</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 11:02:08" itemprop="dateCreated datePublished" datetime="2019-11-19T11:02:08+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-03-07 15:31:58" itemprop="dateModified" datetime="2017-03-07T15:31:58+08:00">2017-03-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine:3.4</span><br><span class="line">RUN apk --no-cache add dnsmasq</span><br><span class="line">EXPOSE 53 53&#x2F;udp</span><br><span class="line">ENTRYPOINT [&quot;dnsmasq&quot;, &quot;-k&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h2><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -d -p 53:53/tcp -p 53:53/udp --<span class="built_in">cap</span>-add=NET_ADMIN -v /data/dns/conf:/home -v /data/dns/dnsmasq.conf:/etc/dnsmasq.conf --name dns-server andyshinn/dnsmasq:2.75</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置DNS服务"><a href="#配置DNS服务" class="headerlink" title="配置DNS服务"></a>配置DNS服务</h3><ul>
+<li>新建目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;data&#x2F;dns&#x2F;conf&#x2F;dnsmasq.d</span><br><span class="line">mkdir -p &#x2F;data&#x2F;dns&#x2F;conf&#x2F;log</span><br></pre></td></tr></table></figure></li>
+<li>修改dnsmasq配置文件<blockquote>
+<p>vi /data/dns/dnsmasq.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resolv-file&#x3D;&#x2F;home&#x2F;dnsmasq-resolv.conf</span><br><span class="line">addn-hosts&#x3D;&#x2F;home&#x2F;dnsmasq.hosts</span><br><span class="line">log-queries</span><br><span class="line">log-facility&#x3D;&#x2F;home&#x2F;log&#x2F;dnsmasq.log</span><br><span class="line">conf-dir&#x3D;&#x2F;home&#x2F;dnsmasq.d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vi /data/dns/conf/resolv.dnsmasq</p>
+</blockquote>
+</li>
+</ul>
+<p>添加内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 192.168.40.206</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置本地解析规则。新建配置文件</li>
+</ul>
+<blockquote>
+<p>vi /data/dns/conf/dnsmasq.hosts</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">172.20.2.14 master</span><br><span class="line">172.20.2.15 slave15</span><br><span class="line">172.20.2.16 slave16</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重启容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart dns-server</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="结果报错："><a href="#结果报错：" class="headerlink" title="结果报错："></a>结果报错：</h3><p>docker: Error response from daemon: failed to create endpoint dns-server on network bridge: Error starting userland proxy: listen tcp 0.0.0.0:53: bind: address already in use.</p>
+<p>dns服务默认是用的53端口被占用了。查看本机端口占用情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp|grep 53</span><br></pre></td></tr></table></figure>
+<p>停止dnsmasq服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop dnsmasq</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/centos/centos-chrony/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="shy">
+      <meta itemprop="description" content="我的运维，我的生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shy blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/centos/centos-chrony/" class="post-title-link" itemprop="url">centos chrony</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 11:02:08" itemprop="dateCreated datePublished" datetime="2019-11-19T11:02:08+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-02-22 09:56:58" itemprop="dateModified" datetime="2017-02-22T09:56:58+08:00">2017-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/centos/" itemprop="url" rel="index">
+                    <span itemprop="name">centos</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Chrony是一个开源的自由软件，它能保持系统时钟与时钟服务器（NTP）同步，让时间保持精确。</p>
+<p>它由两个程序组成：chronyd和chronyc。</p>
+<blockquote>
+<p>chronyd是一个在系统后台运行的守护进程。他根据网络上其他时间服务器时间来测量本机时间的偏移量从而调整系统时钟。对于孤立系统，用户可以手动周期性的输入正确时间（通过chronyc）。在这两种情况下，chronyd决定计算机快慢的比例，并加以纠正。chronyd实现了NTP协议并且可以作为服务器或客户端。<br>chronyc是用来监控chronyd性能和配置其参数的用户界面。</p>
+</blockquote>
+<h3 id="安装、配置"><a href="#安装、配置" class="headerlink" title="安装、配置"></a>安装、配置</h3><p>centos 7 默认已经安装</p>
+<ul>
+<li>安装命令<br><code>yum install chrony</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> chronyd.service</span><br><span class="line">systemctl restart chronyd.service</span><br><span class="line">systemctl status chronyd.service</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>查看时间同步源：</li>
+</ol>
+<p><code>chronyc sources -v</code></p>
+<ol start="2">
+<li>查看时间同步源状态：</li>
+</ol>
+<p><code>chronyc sourcestats -v</code></p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ol>
+<li>查看配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">grep ^[^#] &#x2F;etc&#x2F;chrony.conf </span><br><span class="line"></span><br><span class="line">server 0.centos.pool.ntp.org iburst</span><br><span class="line">server 1.centos.pool.ntp.org iburst</span><br><span class="line">server 2.centos.pool.ntp.org iburst</span><br><span class="line">server 3.centos.pool.ntp.org iburst</span><br><span class="line">stratumweight 0</span><br><span class="line">driftfile &#x2F;var&#x2F;lib&#x2F;chrony&#x2F;drift</span><br><span class="line">rtcsync</span><br><span class="line">makestep 10 3</span><br><span class="line">bindcmdaddress 127.0.0.1</span><br><span class="line">bindcmdaddress ::1</span><br><span class="line">keyfile &#x2F;etc&#x2F;chrony.keys</span><br><span class="line">commandkey 1</span><br><span class="line">generatecommandkey</span><br><span class="line">noclientlog</span><br><span class="line">logchange 0.5</span><br><span class="line">logdir &#x2F;var&#x2F;log&#x2F;chrony</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>修改配置文件添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server 192.168.40.202 iburst  #本地服务ip</span><br></pre></td></tr></table></figure></li>
+<li>ntp服务配置修改<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">allow 192.168.40&#x2F;24   #可以访问本地40段</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ol start="2">
+<li>当Chrony启动时，它会读取/etc/chrony.conf配置文件中的设置。CentOS 7操作系统上最重要的设置有：</li>
+</ol>
+<p>server - 该参数可以多次用于添加时钟服务器，必须以”server “格式使用。一般而言，你想添加多少服务器，就可以添加多少服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server 0.centos.pool.ntp.org</span><br><span class="line">server 3.europe.pool.ntp.org</span><br></pre></td></tr></table></figure>
+<p>stratumweight - stratumweight指令设置当chronyd从可用源中选择同步源时，每个层应该添加多少距离到同步距离。默认情况下，CentOS中设置为0，让chronyd在选择源时忽略源的层级。</p>
+<p>driftfile - chronyd程序的主要行为之一，就是根据实际时间计算出计算机增减时间的比率，将它记录到一个文件中是最合理的，它会在重启后为系统时钟作出补偿，甚至可能的话，会从时钟服务器获得较好的估值。</p>
+<p>rtcsync - rtcsync指令将启用一个内核模式，在该模式中，系统时间每11分钟会拷贝到实时时钟（RTC）。</p>
+<p>allow / deny - 这里你可以指定一台主机、子网，或者网络以允许或拒绝NTP连接到时间服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allow 192.168.4.5</span><br><span class="line">deny 192.168&#x2F;16</span><br></pre></td></tr></table></figure>
+<p>cmdallow / cmddeny - 跟上面相类似，只是你可以指定哪个IP地址或哪台主机可以通过chronyd使用控制命令</p>
+<p>bindcmdaddress - 该指令允许你限制chronyd监听哪个网络接口的命令包（由chronyc执行）。该指令通过cmddeny机制提供了一个除上述限制以外可用的额外的访问控制等级。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bindcmdaddress 127.0.0.1</span><br><span class="line">bindcmdaddress ::1</span><br></pre></td></tr></table></figure>
+<p>makestep - 通常，chronyd将根据需求通过减慢或加速时钟，使得系统逐步纠正所有时间偏差。在某些特定情况下，系统时钟可能会漂移过快，导致该调整过程消耗很长的时间来纠正系统时钟。该指令强制chronyd在调整期大于某个阀值时步进调整系统时钟，但只有在因为chronyd启动时间超过指定限制（可使用负值来禁用限制），没有更多时钟更新时才生效。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/centos/centos-ntp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="shy">
+      <meta itemprop="description" content="我的运维，我的生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shy blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/centos/centos-ntp/" class="post-title-link" itemprop="url">centos ntp</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 11:02:08" itemprop="dateCreated datePublished" datetime="2019-11-19T11:02:08+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-02-22 09:57:06" itemprop="dateModified" datetime="2017-02-22T09:57:06+08:00">2017-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/centos/" itemprop="url" rel="index">
+                    <span itemprop="name">centos</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="配置NTP时间服务器"><a href="#配置NTP时间服务器" class="headerlink" title="配置NTP时间服务器"></a>配置NTP时间服务器</h3><p><a href="http://cn.linux.vbird.org/linux_server/0440ntp_2.php" target="_blank" rel="noopener">鸟哥网址</a></p>
+<h4 id="一-安装ntp软件"><a href="#一-安装ntp软件" class="headerlink" title="一. 安装ntp软件"></a>一. 安装ntp软件</h4><ol>
+<li>检查是否安装了ntp相关包。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep ntp</span><br></pre></td></tr></table></figure></li>
+<li>安装ntp软件。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntp</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="二-参数讲解"><a href="#二-参数讲解" class="headerlink" title="二. 参数讲解"></a>二. 参数讲解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ignore  ：关闭所有的 NTP 联机服务</span><br><span class="line">nomodify：客户端不能更改服务端的时间参数，但是客户端可以通过服务端进行网络校时。</span><br><span class="line">notrust ：客户端除非通过认证，否则该客户端来源将被视为不信任子网</span><br><span class="line">noquery ：不提供客户端的时间查询：用户端不能使用ntpq，ntpc等命令来查询ntp服务器</span><br><span class="line">notrap ：不提供trap远端登陆：拒绝为匹配的主机提供模式 6 控制消息陷阱服务。陷阱服务是 ntpdq 控制消息协议的子系统，用于远程事件日志记录程序。</span><br><span class="line">nopeer ：用于阻止主机尝试与服务器对等，并允许欺诈性服务器控制时钟</span><br><span class="line">kod ： 访问违规时发送 KoD 包。</span><br></pre></td></tr></table></figure>
+
+<h4 id="三-修改配置文件"><a href="#三-修改配置文件" class="headerlink" title="三.修改配置文件"></a>三.修改配置文件</h4><ol>
+<li>查看未修改的配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># grep ^[^#] &#x2F;etc&#x2F;ntp.conf   </span><br><span class="line">driftfile &#x2F;var&#x2F;lib&#x2F;ntp&#x2F;drift</span><br><span class="line">restrict default nomodify notrap nopeer noquery</span><br><span class="line">restrict 127.0.0.1</span><br><span class="line">restrict ::1</span><br><span class="line">server 0.centos.pool.ntp.org iburst</span><br><span class="line">server 1.centos.pool.ntp.org iburst</span><br><span class="line">server 2.centos.pool.ntp.org iburst</span><br><span class="line">server 3.centos.pool.ntp.org iburst</span><br><span class="line">includefile &#x2F;etc&#x2F;ntp&#x2F;crypto&#x2F;pw</span><br><span class="line">keys &#x2F;etc&#x2F;ntp&#x2F;keys</span><br><span class="line">disable monitor</span><br></pre></td></tr></table></figure></li>
+<li>设置允许任何IP的客户机都可以进行时间同步（修改后的配置文件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># grep ^[^#] &#x2F;etc&#x2F;ntp.conf   </span><br><span class="line"></span><br><span class="line">restrict default nomodify notrap</span><br></pre></td></tr></table></figure></li>
+<li>只允许192.168.1.0网段的客户机进行时间同步（修改后的配置文件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># grep ^[^#] &#x2F;etc&#x2F;ntp.conf  </span><br><span class="line"></span><br><span class="line">restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="四-启动NTP服务和防火墙"><a href="#四-启动NTP服务和防火墙" class="headerlink" title="四.启动NTP服务和防火墙"></a>四.启动NTP服务和防火墙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">systemctl start ntpd</span><br><span class="line">systemctl enable ntpd</span><br><span class="line">firewall-cmd --add-port&#x3D;123&#x2F;udp --permanen</span><br><span class="line"></span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;ntpd             #允许BIOS与系统时间同步，添加下面一行。</span><br><span class="line">SYNC_HWCLOCK&#x3D;yes</span><br></pre></td></tr></table></figure>
+<h4 id="五-检测NTP"><a href="#五-检测NTP" class="headerlink" title="五.检测NTP"></a>五.检测NTP</h4><p>1.检测NTP服务是否运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># netstat -tlunp | grep ntp</span><br><span class="line">udp        0      0 192.168.1.101:123       0.0.0.0:*                           2563&#x2F;ntpd          </span><br><span class="line">udp        0      0 127.0.0.1:123           0.0.0.0:*                           2563&#x2F;ntpd          </span><br><span class="line">udp        0      0 0.0.0.0:123             0.0.0.0:*                           2563&#x2F;ntpd          </span><br><span class="line">udp6       0      0 fe80::20c:29ff:fe7b:123 :::*                                2563&#x2F;ntpd          </span><br><span class="line">udp6       0      0 ::1:123                 :::*                                2563&#x2F;ntpd          </span><br><span class="line">udp6       0      0 :::123                  :::*                                2563&#x2F;ntpd</span><br></pre></td></tr></table></figure>
+<p>2.查看ntp服务器有无和上层ntp连通</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># ntpstat</span><br><span class="line">synchronised to NTP server (120.25.108.11) at stratum 3</span><br><span class="line">   time correct to within 99 ms</span><br><span class="line">   polling server every 64 s</span><br></pre></td></tr></table></figure>
+<p>3.查看ntp服务器与上层ntp的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># ntpq -p</span><br><span class="line">     remote           refid      st t when poll reach   delay   offset  jitter</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> news.neu.edu.cn .INIT.          16 u    -   64    0    0.000    0.000   0.000</span><br><span class="line">x202.118.1.130   202.118.1.47     2 u    7   64  377  153.659    9.605  19.941</span><br><span class="line">*time4.aliyun.co 10.137.38.86     2 u   10   64  377   39.666  -47.661  15.944</span><br><span class="line">remote   - 本机和上层ntp的ip或主机名，“+”表示优先，“*”表示次优先</span><br><span class="line">refid    - 参考上一层ntp主机地址</span><br><span class="line">st       - stratum阶层</span><br><span class="line">when     - 多少秒前曾经同步过时间</span><br><span class="line">poll     - 下次更新在多少秒后</span><br><span class="line">reach    - 已经向上层ntp服务器要求更新的次数</span><br><span class="line">delay    - 网络延迟</span><br><span class="line">offset   - 时间补偿</span><br><span class="line">jitter   - 系统时间与bios时间差</span><br></pre></td></tr></table></figure>
+<h4 id="六-配置时间同步客户机"><a href="#六-配置时间同步客户机" class="headerlink" title="六.配置时间同步客户机"></a>六.配置时间同步客户机</h4><p>1.执行ntpdate命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntpdate 192.168.1.101 #192.168.1.101为ntp服务器IP地址</span><br></pre></td></tr></table></figure>
+<p>2.写入BIOS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hclock -w</span><br></pre></td></tr></table></figure>
+<p>3.crond服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;crontab</span><br><span class="line">30 8 * * * root &#x2F;usr&#x2F;sbin&#x2F;ntpdate 192.168.40.202; &#x2F;sbin&#x2F;hwclock -w</span><br></pre></td></tr></table></figure>
+<p>4.重启crond服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service crond restart</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/centos/centos-dnsmasq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="shy">
+      <meta itemprop="description" content="我的运维，我的生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shy blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/centos/centos-dnsmasq/" class="post-title-link" itemprop="url">centos-dnsmasq</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 11:02:08" itemprop="dateCreated datePublished" datetime="2019-11-19T11:02:08+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-03-06 16:06:06" itemprop="dateModified" datetime="2017-03-06T16:06:06+08:00">2017-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/centos/" itemprop="url" rel="index">
+                    <span itemprop="name">centos</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install dnsmasq</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp &#x2F;etc&#x2F;resolv.conf &#x2F;etc&#x2F;dnsmasq-resolv.conf</span><br><span class="line">cp &#x2F;etc&#x2F;hosts &#x2F;etc&#x2F;dnsmasq.hosts</span><br></pre></td></tr></table></figure>
+
+
+<p>查看配置文件</p>
+<p><code>grep ^[^#] /etc/dnsmasq.conf</code></p>
+<blockquote>
+<p>/etc/dnsmasq.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resolv-file&#x3D;&#x2F;etc&#x2F;dnsmasq-resolv.conf</span><br><span class="line">addn-hosts&#x3D;&#x2F;etc&#x2F;dnsmasq.hosts</span><br><span class="line">log-queries</span><br><span class="line">log-facility&#x3D;&#x2F;var&#x2F;log&#x2F;dnsmasq.log</span><br><span class="line">conf-dir&#x3D;&#x2F;etc&#x2F;dnsmasq.d</span><br></pre></td></tr></table></figure>
+<p>其他配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 不要转发纯名称（不带点或域部分）</span><br><span class="line">domain-needed</span><br><span class="line"># 切勿在非路由地址空间中转发地址</span><br><span class="line">bogus-priv</span><br><span class="line"># 查询每个服务器严格按照resolv.conf中的顺序</span><br><span class="line">strict-order</span><br><span class="line"># 取消注释强制dnsmasq尝试每个查询每个服务器严格按照它们在&#x2F;etc&#x2F;resolv.conf中显示的顺序</span><br><span class="line">server&#x3D;&#x2F;server.education&#x2F;10.0.0.10</span><br><span class="line"># 如果你想有一个域自动添加到主机文件中的简单名称</span><br><span class="line">expand-hosts</span><br><span class="line"># 定义域名</span><br><span class="line">domain&#x3D;srv.world</span><br><span class="line"># 记录每个DNS查询</span><br><span class="line">log-queries</span><br><span class="line">#DHCP租约时间</span><br><span class="line">local-ttl&#x3D;600　</span><br><span class="line">#缓存条数</span><br><span class="line">cache-size&#x3D;10000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>vi /etc/dnsmasq-resolv.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 192.168.40.206</span><br><span class="line">nameserver 114.114.114.114</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vi /etc/dnsmasq.hosts<br>本地域名配置文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">192.168.40.195 docker.ifeidao.com</span><br><span class="line">192.168.40.201 test1.ifeidao.com</span><br><span class="line">192.168.40.202 test2.ifeidao.com</span><br><span class="line">192.168.40.203 test3.ifeidao.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编辑支持泛域名的配置文件/etc/dnsmasq.d/address.conf</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">address&#x3D;&#x2F;www.taobao.com&#x2F;127.0.0.1　　#正向解析</span><br><span class="line">ptr-record&#x3D;127.0.0.1.in-addr.arpa,www.taobao.com    #反向解析（可选）</span><br><span class="line"></span><br><span class="line">address&#x3D;&#x2F;baidu.com&#x2F;127.0.0.1    #泛域名解析</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart dnsmasq </span><br><span class="line">systemctl status dnsmasq</span><br></pre></td></tr></table></figure>
+<p>开机启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable dnsmasq</span><br></pre></td></tr></table></figure>
+
+<h3 id="开放防火墙"><a href="#开放防火墙" class="headerlink" title="开放防火墙"></a>开放防火墙</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-service&#x3D;dns --permanent </span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看端口"><a href="#查看端口" class="headerlink" title="查看端口"></a>查看端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -antp |grep tcp</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>安装 dig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install bing-utils</span><br><span class="line">dig docker.ifeidao.com</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><p>配置日志轮转，编辑/etc/logrotate.d/dnsmasq</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;var&#x2F;log&#x2F;dnsmasq.log &#123;</span><br><span class="line">    daily</span><br><span class="line">    copytruncate</span><br><span class="line">    missingok</span><br><span class="line">    rotate 30</span><br><span class="line">    compress</span><br><span class="line">    notifempty</span><br><span class="line">    dateext</span><br><span class="line">    size 200M</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">shy</p>
+  <div class="site-description" itemprop="description">我的运维，我的生活</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/shy1227" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;shy1227" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:shy1227@163.com" title="E-Mail → mailto:shy1227@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:shy1227@live.cn?call|chat" title="Skype → skype:shy1227@live.cn?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://shy1227.lofter.com/" title="Lofter → http:&#x2F;&#x2F;shy1227.lofter.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-vk"></i>Lofter</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-book"></i>
+      推荐阅读
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.ttlsa.com/" title="http:&#x2F;&#x2F;www.ttlsa.com&#x2F;" rel="noopener" target="_blank">运维生存时间</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iyunw.cn/" title="https:&#x2F;&#x2F;www.iyunw.cn" rel="noopener" target="_blank">爱运维</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://linux.51yip.com/" title="http:&#x2F;&#x2F;linux.51yip.com&#x2F;" rel="noopener" target="_blank">Linux命令手册</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://echarts.baidu.com/index.html" title="https:&#x2F;&#x2F;echarts.baidu.com&#x2F;index.html" rel="noopener" target="_blank">echarts可视化库</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">31k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">28 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
