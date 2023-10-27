@@ -1,0 +1,1 @@
+var posts=["2023/07/13/血糖/2023-07-14/","2023/07/13/血糖/2023-07-13/","2023/04/29/血糖/2023-04-29/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
