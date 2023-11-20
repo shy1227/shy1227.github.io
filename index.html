@@ -1,395 +1,861 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>一沫小站 - 一站式展示</title><meta name="author" content="sunhy"><meta name="copyright" content="sunhy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="一沫小站"><meta name="application-name" content="一沫小站"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="一沫小站"><meta property="og:url" content="http://zzjz.shop/index.html"><meta property="og:site_name" content="一沫小站"><meta property="og:description" content="生活，技术"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://zzjz.shop/img/4man.jpg"><meta property="article:author" content="sunhy"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://zzjz.shop/img/4man.jpg"><meta name="description" content="生活，技术"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://zzjz.shop/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  linkPageTop: undefined,
-  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
-  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
-  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 没啥好看的！","backTitle":"♪(^∇^*)欢迎拜拜！"},
-  LA51: undefined,
-  greetingBox: undefined,
-  twikooEnvId: '',
-  commentBarrageConfig:undefined,
-  root: '/',
-  preloader: {"source":3},
-  friends_vue_info: undefined,
-  navMusic: false,
-  mainTone: undefined,
-  authorStatus: {"skills":["🔨 设计开发一条龙"]},
-  algolia: undefined,
-  localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
-  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    simplehomepage: true,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: sunhy","link":"链接: ","source":"来源: 一沫小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
-      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: false,
-  shortcutKey: undefined,
-  autoDarkmode: true
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  configTitle: '一沫小站',
-  title: '一沫小站',
-  postAI: '',
-  pageFillDescription: '生活技术',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2023-11-17 15:35:52',
-  postMainColor: '',
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="生活，技术">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一沫小站">
+<meta property="og:url" content="http://zzjz.shop/index.html">
+<meta property="og:site_name" content="一沫小站">
+<meta property="og:description" content="生活，技术">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="sunhy">
+<meta name="twitter:card" content="summary">
 
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
 
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+<title >一沫小站</title>
 
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/4man.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
-  endLoading: () => {
-    document.getElementById('loading-box').classList.add("loaded");
-  },
-  initLoading: () => {
-    document.getElementById('loading-box').classList.remove("loaded")
-  }
-}
-window.addEventListener('load',()=> { preloader.endLoading() })
-setTimeout(function(){preloader.endLoading();},10000)
+<!-- Favicon -->
 
-if (true) {
-  document.addEventListener('pjax:send', () => { preloader.initLoading() })
-  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://shyme.gitee.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">一沫小站</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/%E6%B0%B4%E6%9E%9C/" style="font-size: 1.05rem;">水果<sup>5</sup></a><a href="/tags/%E8%94%AC%E8%8F%9C/" style="font-size: 1.05rem;">蔬菜<sup>4</sup></a><a href="/tags/%E8%A1%A8/" style="font-size: 1.05rem;">表<sup>1</sup></a><a href="/tags/%E8%B0%B7%E7%89%A9/" style="font-size: 1.05rem;">谷物<sup>3</sup></a><a href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" style="font-size: 1.05rem;">食品添加剂<sup>4</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">12</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div id="home_top"><div class="swiper_container_card" style="height: auto;width: 100%"><div id="bannerGroup"><div id="random-banner"><canvas id="peoplecanvas"></canvas><a id="random-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i><div class="bannerText">随便逛逛<i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div></a></div><div class="categoryGroup"><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-blue)"><a class="categoryButton blue" onclick="pjax.loadUrl(&quot;/categories/血糖指数/&quot;);" href="javascript:void(0);"><span class="categoryButtonText">血糖</span><i class="anzhiyufont anzhiyu-icon-dove"></i></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-red)"><a class="categoryButton red" onclick="pjax.loadUrl(&quot;/categories/技术文章/&quot;);" href="javascript:void(0);"><span class="categoryButtonText">技术</span><i class="anzhiyufont anzhiyu-icon-fire"></i></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-green)"><a class="categoryButton green" onclick="pjax.loadUrl(&quot;/categories/生活日常/&quot;);" href="javascript:void(0);"><span class="categoryButtonText">生活</span><i class="anzhiyufont anzhiyu-icon-book"></i></a></div></div></div><div class="topGroup"><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2023/04/29/%E8%A1%80%E7%B3%96/2023-04-29/&quot;)"><div class="post_cover left_radius"><a href="2023/04/29/血糖/2023-04-29/" title="食物血糖负荷表"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover"></a></div><div class="recent-post-info"><a class="article-title" href="2023/04/29/血糖/2023-04-29/" title="食物血糖负荷表">食物血糖负荷表</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2023/06/01/%E8%A1%80%E7%B3%96/2023-06-01/&quot;)"><div class="post_cover left_radius"><a href="2023/06/01/血糖/2023-06-01/" title="胡萝卜"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover"></a></div><div class="recent-post-info"><a class="article-title" href="2023/06/01/血糖/2023-06-01/" title="胡萝卜">胡萝卜</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2023/06/04/%E8%A1%80%E7%B3%96/2023-06-04/&quot;)"><div class="post_cover left_radius"><a href="2023/06/04/血糖/2023-06-04/" title="番茄"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/0906380719489cc0.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="2023/06/04/血糖/2023-06-04/" title="番茄">番茄</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2023/06/03/%E8%A1%80%E7%B3%96/2023-06-03/&quot;)"><div class="post_cover left_radius"><a href="2023/06/03/血糖/2023-06-03/" title="黄瓜"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/c91e0df47e605b38.webp"></a></div><div class="recent-post-info"><a class="article-title" href="2023/06/03/血糖/2023-06-03/" title="黄瓜">黄瓜</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2023/06/02/%E8%A1%80%E7%B3%96/2023-06-02/&quot;)"><div class="post_cover left_radius"><a href="2023/06/02/血糖/2023-06-02/" title="苹果"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover"></a></div><div class="recent-post-info"><a class="article-title" href="2023/06/02/血糖/2023-06-02/" title="苹果">苹果</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2023/06/05/%E8%A1%80%E7%B3%96/2023-06-05/&quot;)"><div class="post_cover left_radius"><a href="2023/06/05/血糖/2023-06-05/" title="西蓝花"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/9d20ed8c917360f2.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="2023/06/05/血糖/2023-06-05/" title="西蓝花">西蓝花</a></div></div><a class="todayCard" id="todayCard" target="_blank" rel="noopener" href="https://www.zzjz.shop/" style="z-index: 1;"><div class="todayCard-info"><div class="todayCard-tips">小站</div><div class="todayCard-title">一沫小站</div></div><img class="todayCard-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/05/13/645fa3cf90d70.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="封面"><div class="banner-button-group"><div class="banner-button" onclick="event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i><span class="banner-button-text">更多推荐</span></div></div></a></div><link rel="stylesheet"></div></div><div class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div id="categoryBar"><div class="category-bar" id="category-bar"><div id="catalog-bar"><div id="catalog-list"><div class="catalog-list-item" id="首页"><a href="/">首页</a></div>
-    <div class="catalog-list-item" id="/categories/血糖指数/">
-      <a href="/categories/血糖指数/">
-        血糖指数
-      </a>
+    <link href='/img/favicon.svg?v=2.1.8' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.1.8' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"zzjz.shop","author":"sunhy","root":"/","typed_text":["一站记事"],"theme_version":"2.1.8","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/favicon.ico","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":true,"postUpdate":"2023-11-20 17:34:11"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.8" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/')"><div class="post_cover left"><a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" title="葡萄" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/567f2115d640e246.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="葡萄" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><span class="newPost">最新</span><a class="unvisited-post" href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" title="葡萄">未读</a></div><a class="article-title" href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" title="葡萄">葡萄</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-12T16:00:00.000Z" title="发表于 2023-07-13 00:00:00">2023-07-13</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%B0%B4%E6%9E%9C/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>水果</span></a></span></div><div class="content">简介葡萄 葡萄科葡萄属高大缠绕藤本
-糖友用量GL&#x3D;4.3葡萄的GI只有43，属于低GI食物，并且吃100克GL只有4.4。加餐吃100~200 克葡萄是可以的。
-葡萄里面含有大量的果糖，对于患有糖尿病的人来说容易导致血糖上升，血糖没控制好的尽量不要食用。
-营养价值及功效葡萄被人们视为珍果，被誉为世界四大水果之首，它不但营养丰富、用途广泛、色美、气香，味可口，是果中佳品，既可鲜食又可酿制葡萄酒，而且果实、根、叶皆可入药，全身都是宝。葡萄中的葡萄糖，氨基酸，有机酸能兴奋大脑，改善疲乏。长时间吸烟的人可以食用葡萄祛痰，葡萄还可以排毒，抗衰老，增进食欲。葡萄具有补气血，舒筋络，利小便的功效。主治气血虚弱，肺虚咳嗽，心悸盗汗，烦渴，风湿痹痛，淋病，水肿，痘疹不透。
-</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-14/')"><div class="post_cover left"><a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-14/" title="玉米" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/f80a9bff1ee7ffd6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="玉米" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-14/" title="玉米">未读</a></div><a class="article-title" href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-14/" title="玉米">玉米</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-12T16:00:00.000Z" title="发表于 2023-07-13 00:00:00">2023-07-13</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%B0%B7%E7%89%A9/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>谷物</span></a></span></div><div class="content">简介玉蜀黍，禾本科玉蜀黍属一年生草本作物植物。
-糖友用量GI值为52,属于中等水平。建议吃玉米要掌握在75—100克。“如果是新鲜的玉米棒子，一个就够。”
-营养价值可入药，有利尿消肿、清肝利胆的功效。
-1、缓解便秘：玉米中含有丰富的烟酸及维生素b6，可加快肠道蠕动2、降低胆固醇：玉米中的亚油酸含量在60%以上，可和玉米胚芽中的维生素e起协同作用，降低血液中的胆固醇。3、明目：玉米中含有丰富的黄体素及玉米黄质
-食用方法烘烤玉米煮熟后切块，沥干水分并刷上烧烤酱，撒上黑胡椒粉和椒盐粉，将玉米摆放好。烤箱250度预热10分钟，将烤盘放在烤箱中220度烤15分钟。煮粥将玉米和糯米用清水浸泡两小时，放入锅中加清水煮粥，煮熟之后加上适量红砂糖再煮5分钟即可。
-</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/07/04/%E8%A1%80%E7%B3%96/2023-07-04/')"><div class="post_cover left"><a href="/2023/07/04/%E8%A1%80%E7%B3%96/2023-07-04/" title="绿豆" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/510a4d0db16b077f.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="绿豆" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/07/04/%E8%A1%80%E7%B3%96/2023-07-04/" title="绿豆">未读</a></div><a class="article-title" href="/2023/07/04/%E8%A1%80%E7%B3%96/2023-07-04/" title="绿豆">绿豆</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-03T16:00:00.000Z" title="发表于 2023-07-04 00:00:00">2023-07-04</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%B0%B7%E7%89%A9/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>谷物</span></a></span></div><div class="content">简介绿豆是豆科植物绿豆的种子，别名青小豆（因其颜色青绿而得名）、菉豆、植豆等，在中国已有两千余年的栽培史。原产地在印度、缅甸地区。现在东亚各国普遍种植，非洲、欧洲、美国也有少量种植，中国、缅甸等国是绿豆主要的出口国。种子和茎被广泛食用。绿豆清热之功在皮，解毒之功在肉。绿豆汤是家庭常备夏季清暑饮料，清暑开胃，老少皆宜。传统绿豆制品有绿豆糕、绿豆酒、绿豆饼、绿豆沙、绿豆粉皮等。
-糖友用量绿豆的GI（血糖生成指数）值为27，一勺绿豆（干）≈0.5碗米饭的热量。每日食用量在40克为宜。绿豆有清热解毒、利尿消肿的作用，对治疗和辅助糖尿病合并肾病有良好的作用，而且还有降血压的功效。
-营养价值有蛋白质、脂肪、碳水化合物，维生素B1、维生素B2、胡萝卜素、菸碱酸、叶酸绿豆具有降血脂、降胆固醇、抗过敏、抗菌、抗肿瘤、增强食欲、保肝护肾的药理作用。绿豆的有效成分具有抗过敏作用，可辅助治疗荨麻疹等过敏反应。绿豆对葡萄球菌有抑制作用。绿豆中所含蛋白质、磷脂均有兴奋神经，增进食欲的功能。绿豆含丰富胰蛋白酶抑制剂，可以保护肝脏，减少蛋白分解，减少氮质血症，因而保护肾脏。
-推荐食谱苦瓜绿豆汤。这道食谱具有消暑的功效 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/07/03/%E8%A1%80%E7%B3%96/2023-07-03/')"><div class="post_cover left"><a href="/2023/07/03/%E8%A1%80%E7%B3%96/2023-07-03/" title="西瓜" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/3fc441250dfd929e.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="西瓜" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/07/03/%E8%A1%80%E7%B3%96/2023-07-03/" title="西瓜">未读</a></div><a class="article-title" href="/2023/07/03/%E8%A1%80%E7%B3%96/2023-07-03/" title="西瓜">西瓜</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-02T16:00:00.000Z" title="发表于 2023-07-03 00:00:00">2023-07-03</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%B0%B4%E6%9E%9C/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>水果</span></a></span></div><div class="content">简介西瓜，是葫芦科西瓜属一年生蔓生藤本植物 [26] ，形态一般近似于球形或椭圆形，颜色有深绿、浅绿或带有黑绿条带或斑纹；瓜籽多为黑色，呈椭圆形，头尖；茎枝粗壮，有淡黄褐色的柔毛；叶片如纸，呈三角状卵形，边缘呈波状。花果期5—6月。
-糖友用量西瓜是一种健康又营养的水果，每100克西瓜中约含25千卡的能量，其中，西瓜90%以上为水分，含糖量只有5.5%，属于含糖量偏低的水果，且西瓜中含有人体所需的多种营养成分，如维生素C、B族维生素和矿物质等。但是由于西瓜的升糖指数（GI）比较高，为72，所以吃西瓜还是要适量。
-建议糖友每天食用西瓜不超过200克，并且食用时间应当在两餐之间。
-营养价值西瓜堪称“盛夏之王”，清爽解渴，味道甘甜多汁，乃盛夏佳果。西瓜除不含脂肪和胆固醇外，含有大量的葡萄糖、苹果酸、果糖、蛋白氨基酸、番茄素及丰富的维生素C等物质，是一种营养极高、纯净且安全的绿色食品。瓤肉含糖量一般为5-12%，包括葡萄糖、果糖和蔗糖。甜度随成熟后期蔗糖的增加而增加。西瓜果肉：蛋白质、葡萄糖、蔗糖、果糖、苹果酸、瓜氨酸、谷氨酸、精氨酸、磷酸、内氨酸、丙酸、乙二醇、甜菜碱、腺嘌呤、萝卜素、胡萝卜素 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-14/')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-14/" title="安赛蜜">未读</a></div><a class="article-title" href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-14/" title="安赛蜜">安赛蜜</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-13T16:00:00.000Z" title="发表于 2023-06-14 00:00:00">2023-06-14</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>食品添加剂</span></a></span></div><div class="content">简介安赛蜜是一种食品添加剂，化学名称为乙酰磺胺酸钾，又称AK糖，外观为白色结晶性粉末，它是一种有机合成盐，其口味与甘蔗相似，易溶于水，微溶于酒精。安赛蜜化学性质稳定，不易出现分解失效现象；不参与机体代谢，不提供能量；甜度较高，价格便宜；无致龋齿性；对热和酸稳定性好，是当前世界上第四代合成甜味剂
-通途安赛蜜作为非营养型甜味剂，在一般pH范围内用于食品饮料其浓度基本无变化。与其他甜味剂可混合使用，特别是与阿斯巴甜以及环己基氨基磺酸盐合用时效果较佳。可广泛用于固体饮料、酱菜类、蜜饯、胶姆糖、餐桌用甜味料的各种食品。该品具有强烈甜味，甜度约为蔗糖的200倍，呈味性质与糖精相似，高浓度时有苦味。
-危害由于乙酰磺胺酸钾需要通过肝脏代谢排出，若吃得过多可能会造成肝脏负担加重，严重时可能会引起肝脏损害。
-糖友建议用量安赛蜜不参与人体代谢也没热量，偶尔吃一次或者是少量的吃并不会引起血糖升高，但是安赛蜜甜度高，不建议长期吃，长期过量食用可能引起剧烈血糖反应，还不利于身体健康。
-</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-15/')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-15/" title="安赛对羟基苯甲酸甲酯钠蜜">未读</a></div><a class="article-title" href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-15/" title="安赛对羟基苯甲酸甲酯钠蜜">安赛对羟基苯甲酸甲酯钠蜜</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-13T16:00:00.000Z" title="发表于 2023-06-14 00:00:00">2023-06-14</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>食品添加剂</span></a></span></div><div class="content">别名羟苯乙酯钠尼泊金乙酯钠尼泊金乙酯钠盐尼泊金乙脂钠盐对羟基苯甲酸乙酯钠对羟基苯甲酸乙脂钠对羟基苯甲酸乙酯钠盐4-羟基苯甲酸乙酯钠盐尼泊金乙酯钠-对羟基苯甲酸乙酯钠对羟基苯甲酸乙酯钠(尼泊金乙酯钠)
-简介对羟基苯甲酸甲酯钠是一种分子式为C8H7NaO3的化工产品。
-通途本品为水溶性防腐剂,主要特点是安全、高效、广谱抗菌。广泛应用于医药工业 （中草药、中成药剂的配制；医疗器械消毒）；食品工业（乳制品、腌制品、饮料、果 汁、果冻、糕点等）；纺织工业（纺织品、棉纱、化纤）的防腐。以及其他如化妆品、 饲料、日用工业品的防腐。20公斤纸板桶,内复合铝膜袋。
-危害
-羟基苯甲酸乙酯钠是一种安全的防腐剂：对成人影响不大，杀菌性很强，毒性极低，对人体皮肤无刺激，可用于化妆品、药品、食品添加剂等。
-儿童应避免接触：羟基苯甲酸乙酯钠可能被皮肤吸收，在体内无法代谢，有干扰内分泌及激素水平的风险，可能对身体的生长发育造成不良影响。
+</div>
+    <!-- page preloader end -->
 
-糖友建议用量未有明确影响
-</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/06/13/%E8%A1%80%E7%B3%96/2023-06-13/')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/06/13/%E8%A1%80%E7%B3%96/2023-06-13/" title="食用小苏打">未读</a></div><a class="article-title" href="/2023/06/13/%E8%A1%80%E7%B3%96/2023-06-13/" title="食用小苏打">食用小苏打</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-12T16:00:00.000Z" title="发表于 2023-06-13 00:00:00">2023-06-13</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>食品添加剂</span></a></span></div><div class="content">简介食用小苏打主要用于食品、饮料汽水和冷饮中二氧化碳的发生剂、还用于饲料添加剂、医药、化学、制革、消防制剂、生物养殖、洗涤剂、环保脱硫、杀菌灭毒、洗浴保健等行业。
-通途其它：小苏打的化学名称叫碳酸氢钠，经常用它当发酵粉做馒头、饼干等食品添加剂。
-危害碳酸氢钠俗称为小苏打，常用于食品添加剂以及临床上用于中和胃酸，通常少量食用是没有什么危害的。但是长期进食对人体是有一定危害的，可能会出现胃酸浓度下降的情况，从而影响人体的消化功能，容易导致胃肠胀气、胃肠道不适、消化不良等症状。另外，还可能会导致内分泌和代谢紊乱，出现代谢性碱中毒。因为碳酸氢钠含有钠比较多，长期进食碳酸氢钠容易导致钠摄入过多，还会诱发高血压。
-糖友建议用量苏打不会影响糖尿病治疗，对糖尿病患者没有明显副作用，并且能调节身体酸碱平衡，合并尿酸增高时适当服用小苏打可以促进体内尿酸排泄。
-</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/06/12/%E8%A1%80%E7%B3%96/2023-06-12/')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/06/12/%E8%A1%80%E7%B3%96/2023-06-12/" title="麦芽糊精">未读</a></div><a class="article-title" href="/2023/06/12/%E8%A1%80%E7%B3%96/2023-06-12/" title="麦芽糊精">麦芽糊精</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T16:00:00.000Z" title="发表于 2023-06-12 00:00:00">2023-06-12</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>食品添加剂</span></a></span></div><div class="content">简介麦芽糊精（MD），是一种多糖类食品原料，是一种介于淀粉和淀粉糖之间的低转化产品。外观上白色或略带浅黄色的无定形粉末，无肉眼可见杂质，具有特殊气味，味道上不甜或者微甜。
-原料其原料是含淀粉质的玉米、大米等，也可以是精制淀粉，如玉米淀粉、小麦淀粉、木薯淀粉等。主要成分为糊精并含有多聚糖、四糖或四糖以上的低聚糖，还含少量的麦芽糖和葡萄糖。
-用途广泛应用于饮料、冷冻食品、糖果、麦片、乳制品、保健品等行业，还可应用于纺织、日化、医药生产中。麦芽糊精的组成，与其水解工艺、淀粉类型及淀粉中其它组分（如蛋白质、脂肪等）的存在密切相关。不同DE值的麦芽糊精具有不同的功能和性质：如增稠、胶凝、降低产品甜度、改变体系冰点、抑制冰晶生长、代替脂肪、减少热能、改善质构及用作喷雾剂或干燥载体等。
-特性麦芽糊精是DE值5-20的淀粉水解产物。它介于淀粉和淀粉糖之间，是一种价格低廉、口感滑腻、没有任何味道的营养性多糖。
-麦芽糊精一般为多种DE值的混合物。它可以是白色粉末，也可以是浓缩液体。流动性良好，无异味，几乎没有甜度。溶解性能良好，有适度的粘度。吸湿性低，不易结团。有较好的载体作用，是各种甜味剂、香味剂、填充 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/06/08/%E8%A1%80%E7%B3%96/2023-06-08/')"><div class="post_cover left"><a href="/2023/06/08/%E8%A1%80%E7%B3%96/2023-06-08/" title="大豆" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/4a021515094907ac.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大豆" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/06/08/%E8%A1%80%E7%B3%96/2023-06-08/" title="大豆">未读</a></div><a class="article-title" href="/2023/06/08/%E8%A1%80%E7%B3%96/2023-06-08/" title="大豆">大豆</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-07T16:00:00.000Z" title="发表于 2023-06-08 00:00:00">2023-06-08</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%B0%B7%E7%89%A9/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>谷物</span></a></span></div><div class="content">简介大豆（Glycine max (L.) Merr.）是豆科大豆属的一年生草本植物。原产于中国，在中国各地均有栽培，同时广泛栽培于世界各地。大豆是中国重要粮食作物之一，已有五千年栽培历史，古称菽，中国东北为主产区，是一种其种子含有丰富植物蛋白质的作物，大豆蛋白质含量为35%～40%。
-升糖指数含糖量糖友建议用量价值</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2023/06/06/%E8%A1%80%E7%B3%96/2023-06-07/')"><div class="post_cover left"><a href="/2023/06/06/%E8%A1%80%E7%B3%96/2023-06-07/" title="桃" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s3.bmp.ovh/imgs/2023/10/27/cbbc0acb115a01d7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="桃" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">血糖指数</div><a class="unvisited-post" href="/2023/06/06/%E8%A1%80%E7%B3%96/2023-06-07/" title="桃">未读</a></div><a class="article-title" href="/2023/06/06/%E8%A1%80%E7%B3%96/2023-06-07/" title="桃">桃</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-05T16:00:00.000Z" title="发表于 2023-06-06 00:00:00">2023-06-06</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%B0%B4%E6%9E%9C/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>水果</span></a></span></div><div class="content">简介桃（Prunus persica (L.) Batsch），蔷薇科李属落叶小乔木植物。桃原产于中国，距今已有4000多年的栽培历史，在中国河北、山东、江苏、浙江等地区均有栽培。
-升糖指数糖友是可以吃桃子的，其升糖指数确实不高（普通桃子GI：28），即使在普遍低升糖的水果中，它都算是“低之又低”的类型了。
-含糖量桃子虽然吃起来感觉甜，但每100g的桃子可食果肉部分中，含糖量仅为5.2g。
-糖友建议用量桃子的含糖量并不低，一般水蜜桃含糖量约为10%，黄桃品种含糖量达到14%，是各种桃子里最高的，属于中等偏高糖的水果。
-所以糖尿病人餐后如果吃桃过多，会引起血糖的快速波动，建议在两餐之间的时间段可以适量吃一些，每天最多只能吃一个。
-同时在各种桃子品种里，油桃的有机酸含量较高，胃酸过多、有胃炎或胃溃疡的人不宜多吃。黄桃直接吃的口感并不理想，所以通过是拿来做水果罐头，不适合直接吃。
-价值桃具有药用价值，其干燥成熟的种子入药称为“桃仁”，味苦、甘，性平，具有活血祛瘀、润肠通便、止咳平喘的作用，但孕妇须慎用；其干燥枝条入药称为“桃枝”，味苦，性平，具有活血通络、解毒杀虫的作用。桃的果实就是平时吃的 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><div class="pagination_tips_next">下页</div><i style="font-weight: inherit; font-size: 1rem;" class="anzhiyufont anzhiyu-icon-chevron-right fa-fw"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')" aria-label="toPage"><a id="toPageButton" onclick="anzhiyu.toPage()"><i class="anzhiyufont anzhiyu-icon-angles-right" style="font-weight: inherit; font-size: 1rem;"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/4man.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" ait="status"/></div></div><div class="author-info__description">生活，技术</div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/%E6%B0%B4%E6%9E%9C/" style="font-size: 1.05rem;">水果<sup>5</sup></a><a href="/tags/%E8%94%AC%E8%8F%9C/" style="font-size: 1.05rem;">蔬菜<sup>4</sup></a><a href="/tags/%E8%A1%A8/" style="font-size: 1.05rem;">表<sup>1</sup></a><a href="/tags/%E8%B0%B7%E7%89%A9/" style="font-size: 1.05rem;">谷物<sup>3</sup></a><a href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" style="font-size: 1.05rem;">食品添加剂<sup>4</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">12</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">17</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2021-03-31T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2023 By <a class="footer-bar-link" href="/" title="sunhy" target="_blank">sunhy</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">1</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://shyme.gitee.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/%E6%B0%B4%E6%9E%9C/" style="font-size: 0.88rem;">水果<sup>5</sup></a><a href="/tags/%E8%94%AC%E8%8F%9C/" style="font-size: 0.88rem;">蔬菜<sup>4</sup></a><a href="/tags/%E8%A1%A8/" style="font-size: 0.88rem;">表<sup>1</sup></a><a href="/tags/%E8%B0%B7%E7%89%A9/" style="font-size: 0.88rem;">谷物<sup>3</sup></a><a href="/tags/%E9%A3%9F%E5%93%81%E6%B7%BB%E5%8A%A0%E5%89%82/" style="font-size: 0.88rem;">食品添加剂<sup>4</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
-var HoldLog = console.log;
-console.log = function () {};
-let now1 = new Date();
-queueMicrotask(() => {
-  const Log = function () {
-    HoldLog.apply(console, arguments);
-  }; //在恢复前输出日志
-  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
-  now1.setTime(now1.getTime() + 250);
-  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
-  const dnum = Math.floor(days);
-  const ascll = [
-    `欢迎使用安知鱼!`,
-    `生活明朗, 万物可爱`,
-    `
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/favicon.ico">
+    
+    
+        <div class="trm-logo-text">
+            一沫<span>星辰</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children current-menu-item">
+                <a  href="/" target="">
+                    home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    隧道
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    我的
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            <div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            Hi my new friend!
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            树深时见鹿，<br>溪午不闻钟。
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        index.html
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/4man.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        一沫记事
+    </h5>
+    
+        <div class="trm-label">
+            我的
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://gitee.com/shyme" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                河南
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
         
-       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
-      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
-      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
-      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
-      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
-      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:shy1227@126.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <!-- categories -->
+
+    <div class="row hidden-sm">
         
-        `,
-    "已上线",
-    dnum,
-    "天",
-    "©2020 By 安知鱼 V1.6.8",
-  ];
-  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+        
+        <div class="col-lg-6">
+            <!-- categories card -->
+<div class="trm-blog-categories trm-scroll-animation">
+    <h6>
+        血糖指数
+        <span class="trm-number">
+            17
+        </span>
+    </h6>
+    <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+    <a href="/categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/." class="trm-label">
+        查看分类 
+        <i class="iconfont fas fa-arrow-right arrow-right"></i>
+    </a>
+</div>
+<!-- categories card end -->
+        </div>
+        
+        <div class="col-lg-6">
+            <!-- categories card -->
+<div class="trm-blog-categories trm-scroll-animation">
+    <h6>
+        软件技术
+        <span class="trm-number">
+            1
+        </span>
+    </h6>
+    <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+    <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF/." class="trm-label">
+        查看分类 
+        <i class="iconfont fas fa-arrow-right arrow-right"></i>
+    </a>
+</div>
+<!-- categories card end -->
+        </div>
+        
+    </div>
 
-  setTimeout(
-    Log.bind(
-      console,
-      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      ""
-    )
-  );
-  setTimeout(
-    Log.bind(
-      console,
-      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
-      "color:white; background-color:#4fd953",
-      "",
-      "",
-      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
-    )
-  );
+<!-- categories end -->
 
-  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+<!-- newest publications -->
+<div class="row">
+    
+        <div class="col-lg-12">
+            <!-- title -->
+            <h5 class="trm-title-with-divider">
+                最近发布 
+                <span data-number="01"></span>
+            </h5>
+        </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/11/20/%E8%BD%AF%E4%BB%B6/frp%E9%85%8D%E7%BD%AE/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF/">
+                    软件技术
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/11/20/%E8%BD%AF%E4%BB%B6/frp%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
+                    frp配置
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/11/20</li>
+                <li>17:25</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://s3.bmp.ovh/imgs/2023/10/27/567f2115d640e246.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" class="trm-anima-link">
+                    葡萄
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/13</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-14/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://s3.bmp.ovh/imgs/2023/10/27/f80a9bff1ee7ffd6.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-14/" class="trm-anima-link">
+                    玉米
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/13</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/07/04/%E8%A1%80%E7%B3%96/2023-07-04/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://s3.bmp.ovh/imgs/2023/10/27/510a4d0db16b077f.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/07/04/%E8%A1%80%E7%B3%96/2023-07-04/" class="trm-anima-link">
+                    绿豆
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/04</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/07/03/%E8%A1%80%E7%B3%96/2023-07-03/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://s3.bmp.ovh/imgs/2023/10/27/3fc441250dfd929e.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/07/03/%E8%A1%80%E7%B3%96/2023-07-03/" class="trm-anima-link">
+                    西瓜
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/03</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-14/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-14/" class="trm-anima-link">
+                    安赛蜜
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/06/14</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-15/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/06/14/%E8%A1%80%E7%B3%96/2023-06-15/" class="trm-anima-link">
+                    安赛对羟基苯甲酸甲酯钠蜜
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/06/14</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/06/13/%E8%A1%80%E7%B3%96/2023-06-13/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/06/13/%E8%A1%80%E7%B3%96/2023-06-13/" class="trm-anima-link">
+                    食用小苏打
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/06/13</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/06/12/%E8%A1%80%E7%B3%96/2023-06-12/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/06/12/%E8%A1%80%E7%B3%96/2023-06-12/" class="trm-anima-link">
+                    麦芽糊精
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/06/12</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/06/08/%E8%A1%80%E7%B3%96/2023-06-08/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://s3.bmp.ovh/imgs/2023/10/27/4a021515094907ac.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/06/08/%E8%A1%80%E7%B3%96/2023-06-08/" class="trm-anima-link">
+                    大豆
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/06/08</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+<!-- newest publications end -->
 
-  setTimeout(
-    console.warn.bind(
-      console,
-      "%c ⚡ Powered by 安知鱼 %c 你正在访问 sunhy 的博客.",
-      "color:white; background-color:#f0ad4e",
-      ""
-    )
-  );
 
-  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+    <div class="trm-pagination">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a>
+    </div>
 
-  setTimeout(
-    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
-  );
-});</script><script async src="/anzhiyu/random.js"></script><script>if (typeof gsap === "object") {
-  getScript("/js/anzhiyu/people.js", {defer:true})
-} else {
-  getScript("https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js").then(()=>{
-    getScript("/js/anzhiyu/people.js", {defer:true})
-  });
-}
-</script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>var visitorMail = "visitor@163.com";
-</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: false,
-  scrollRestoration: false
-})
 
-document.addEventListener('pjax:send', function () {
-  // removeEventListener scroll 
-  anzhiyu.removeGlobalFnEvent('pjax')
-  anzhiyu.removeGlobalFnEvent('themeChange')
+                    <div class="trm-divider footer-divider"></div>
 
-  document.getElementById('rightside').classList.remove('rightside-show')
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2023028700号-1</a>
+        </div>
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.8
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
   
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
-    }
-  }
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-  typeof typed === 'object' && typed.destroy()
+  <!-- Plugin -->
 
-  //reset readmode
-  const $bodyClassList = document.body.classList
-  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
-})
 
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
 
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
-    const newScript = document.createElement('script')
-    const content = item.text || item.textContent || item.innerHTML || ""
-    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-    newScript.appendChild(document.createTextNode(content))
-    item.parentNode.replaceChild(newScript, item)
-  })
 
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
-  typeof panguInit === 'function' && panguInit()
+    
 
-  // google analytics
-  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+    
+        <script src="/js/plugins/typing.js?v=2.1.8"></script>
+    
 
-  // baidu analytics
-  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
 
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+        <script src="/js/plugins/local_search.js?v=2.1.8"></script>
+    
 
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-})
+    <!-- 数学公式 -->
+    
 
-document.addEventListener('pjax:error', e => {
-  if (e.request.status === 404) {
-    pjax.loadUrl('/404.html')
-  }
-})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
+    <!-- 评论插件 -->
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.8"></script>
+
+</body>
+
+</html>

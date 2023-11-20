@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="反向代理软件frp的配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="frp配置">
+<meta property="og:url" content="http://zzjz.shop/2023/11/20/%E8%BD%AF%E4%BB%B6/frp%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="一沫小站">
+<meta property="og:description" content="反向代理软件frp的配置">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-20T09:25:31.000Z">
+<meta property="article:modified_time" content="2023-11-20T09:25:31.000Z">
+<meta property="article:author" content="sunhy">
+<meta property="article:tag" content="软件">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="软件">
+
+
+<title >frp配置</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.1.8' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.1.8' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"zzjz.shop","author":"sunhy","root":"/","typed_text":["一站记事"],"theme_version":"2.1.8","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/favicon.ico","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-11-20 17:25:31"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.8" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/favicon.ico">
+    
+    
+        <div class="trm-logo-text">
+            一沫<span>星辰</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    隧道
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    我的
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            frp配置
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2023
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/4man.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        一沫记事
+    </h5>
+    
+        <div class="trm-label">
+            我的
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://gitee.com/shyme" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                河南
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:shy1227@126.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            11/20
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            17:25
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            sunhy
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。 可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
+<p>通过在具有公网 IP 的节点上部署 frp 服务端，可以轻松地将内网服务穿透到公网，同时提供诸多专业的功能特性，这包括：</p>
+<p>1.客户端服务端通信支持 TCP、KCP 以及 Websocket 等多种协议。<br>2.采用 TCP 连接流式复用，在单个连接间承载更多请求，节省连接建立时间。<br>3.代理组间的负载均衡。<br>4.端口复用，多个服务通过同一个服务端端口暴露。<br>5.多个原生支持的客户端插件（静态文件查看，HTTP、SOCK5 代理等），便于独立使用 frp 客户端完成某些工作。 6.高度扩展性的服务端插件系统，方便结合自身需求进行功能扩展。<br>7.服务端和客户端 UI 页面。</p>
+<p>网址:FRP github网址 frp下载:<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">releases</a></p>
+<p>linux版本选择linux版本,windows端可以下载windows版本，服务器和客户端尽量保持版本一致，当前最新版本为0.49.0</p>
+<p>1.服务端部署<br>1.1.linux部署<br>1.1.1 创建frp目录</p>
+<p><code>mkdir frp</code></p>
+<p>1.1.2 创建一个frp目录后,进入该目录，使用如下命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> frp</span><br><span class="line">//进入创建的frp目录</span><br><span class="line"></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.49.0/frp_0.52.3_linux_amd64.tar.gz</span><br><span class="line">//下载frp0.49版本服务端软件包</span><br><span class="line"><span class="comment">#若无wget命令,CentOS运行</span></span><br><span class="line">yum install -y wget          //安装wget软件</span><br><span class="line"><span class="comment">#ubuntu或debian</span></span><br><span class="line">apt install -y wget           //安装wget软件</span><br></pre></td></tr></table></figure>
+
+<p>1.1.3解压文件并进入解压文件夹</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf frp_0.52.3_linux_amd64.tar.gz  //解压文件</span><br><span class="line"><span class="built_in">cd</span>  frp_0.52.3_linux_amd64    </span><br><span class="line">//进入解压文件夹</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑frps.ini文件</span></span><br><span class="line">vim frps.ini                             //编辑frps.ini文件</span><br><span class="line">编辑以下内容</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"><span class="comment"># 启用面板</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"><span class="comment"># 面板登录名和密码</span></span><br><span class="line"><span class="attr">dashboard_user</span> = admin</span><br><span class="line"><span class="attr">dashboard_pwd</span> = xxxxxx</span><br><span class="line"><span class="comment"># 使用http代理并使用80端口进行穿透</span></span><br><span class="line"><span class="attr">vhost_http_port</span> = <span class="number">80</span></span><br><span class="line"><span class="comment"># 使用https代理并使用443端口进行穿透</span></span><br><span class="line"><span class="attr">vhost_https_port</span> = <span class="number">443</span></span><br><span class="line"><span class="comment"># 日志路径</span></span><br><span class="line"><span class="attr">log_file</span> = ./frps.log</span><br><span class="line"><span class="comment"># 日志级别</span></span><br><span class="line"><span class="attr">log_level</span> = info</span><br><span class="line"><span class="comment"># 日志最大保存天数</span></span><br><span class="line"><span class="attr">log_max_days</span> = <span class="number">7</span></span><br><span class="line"><span class="comment"># 认证超时时间</span></span><br><span class="line"><span class="attr">authentication_timeout</span> = <span class="number">900</span></span><br><span class="line"><span class="comment"># 认证token，客户端需要和此对应</span></span><br><span class="line"><span class="attr">token</span>=<span class="number">123123123</span></span><br><span class="line"><span class="comment"># 最大连接数</span></span><br><span class="line"><span class="attr">max_pool_count</span> = <span class="number">5</span></span><br><span class="line"><span class="attr">max_ports_per_client</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>1.1.5开放防火墙相关端口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">CentOS系统开放端口命令(云服务器也需要在安全组加入对应端口):</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --add-port=7000/tcp --permanent   //开放7000端口</span><br><span class="line">firewall-cmd --zone=public --add-port=7500/tcp --permanent   //开放7500端口</span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent     //开放80端口</span><br><span class="line">firewall-cmd --zone=public --add-port=443/tcp --permanent    //开放443端口</span><br><span class="line">firewall-cmd --reload                                        //使能防火墙生效</span><br><span class="line">ubuntu或debian系统:</span><br><span class="line"></span><br><span class="line">ufw allow 80                 //开启80端口</span><br><span class="line">ufw allow 443                //开启443端口</span><br><span class="line">ufw allow 7000               //开启7000端口</span><br><span class="line">ufw allow 7500               //开启7500端口</span><br><span class="line">ufw <span class="built_in">enable</span>                   //启动防火墙           </span><br><span class="line">ufw <span class="built_in">disable</span>                  //关闭防火墙</span><br></pre></td></tr></table></figure>
+
+<p>1.1.6启动服务几种方式</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#正常启动</span></span><br><span class="line">./frps -c ./frps.ini</span><br><span class="line"><span class="comment">#使用nohup后台挂起服务并记录日志</span></span><br><span class="line"><span class="built_in">nohup</span> ./frps -c frps.ini &gt; ./frps.log 2&gt;&amp;1 &amp;</span><br><span class="line">关闭frp</span><br><span class="line"></span><br><span class="line">ps -ef | grep frp   //查看进程pid号</span><br><span class="line"><span class="built_in">kill</span> -9 pid号       //杀死进程</span><br></pre></td></tr></table></figure>
+
+<p>3.frp服务配置服务,并设置开机自启<br>3.1建立启动脚本编写sh文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">cd</span> /frp/frp_0.49.0_linux_amd64/</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;pwd&#x27;</span>|<span class="built_in">nohup</span> ./frps -c frps.ini &gt; ./frps.log 2&gt;&amp;1 &amp;</span><br><span class="line">将sh文件与frp服务放一起,命名为frp.sh</span><br><span class="line"></span><br><span class="line">root@vultr:/frp/frp_0.49.0_linux_amd64<span class="comment"># pwd</span></span><br><span class="line">/frp/frp_0.49.0_linux_amd64</span><br><span class="line">root@vultr:/frp/frp_0.49.0_linux_amd64<span class="comment"># ls</span></span><br><span class="line">frpc  frpc_full.ini  frpc.ini  frps  frps_full.ini  frp.sh  frps.ini  frps.log  LICENSE</span><br><span class="line">给frp.sh 添加 可执行权限</span><br><span class="line"></span><br><span class="line"><span class="built_in">chmod</span> +x frp.sh</span><br></pre></td></tr></table></figure>
+
+<p>3.2配置frp.service文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/frp.service</span><br><span class="line">注意ExecStart路径为自己本地的</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=npc</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/frp/frp_0.49.0_linux_amd64/frp.sh</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=5</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>启动并测试</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload    //使能服务生效</span><br><span class="line">systemctl <span class="built_in">enable</span> frp       //配置开机自启</span><br><span class="line">systemctl start frp        //启动服务</span><br><span class="line">systemctl status frp       //查看服务状态</span><br><span class="line">systemctl stop frp         //关闭服务</span><br></pre></td></tr></table></figure>
+
+<p>1.2.docker部署<br>1.2.1.debian、ubuntu、Centos系统一键安装docker</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL get.docker.com -o get-docker.sh</span><br><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line">sudo sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>
+
+<p>1.2.2.创建frp.toml文件并创建目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /frp</span><br><span class="line">vim /frp/frps.toml</span><br></pre></td></tr></table></figure>
+
+<p>编辑frps.toml配置文件</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bindAddr</span> = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line"><span class="attr">bindPort</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="attr">webServer.addr</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">webServer.port</span> = <span class="number">7500</span></span><br><span class="line"><span class="attr">webServer.user</span> = <span class="string">&quot;admin&quot;</span></span><br><span class="line"><span class="attr">webServer.password</span> = <span class="string">&quot;admin&quot;</span></span><br><span class="line"><span class="comment"># webServer.tls.certFile = &quot;server.crt&quot;</span></span><br><span class="line"><span class="comment"># webServer.tls.keyFile = &quot;server.key&quot;</span></span><br><span class="line"><span class="comment"># dashboard assets directory(only for debug mode)</span></span><br><span class="line"><span class="comment"># webServer.assetsDir = &quot;./static&quot;</span></span><br><span class="line"><span class="comment"># enablePrometheus will export prometheus metrics on webServer in /metrics api.</span></span><br><span class="line"><span class="attr">enablePrometheus</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># console or real logFile path like ./frps.log</span></span><br><span class="line"><span class="comment">#log.to = &quot;./frps.log&quot;</span></span><br><span class="line"><span class="comment"># trace, debug, info, warn, error</span></span><br><span class="line"><span class="attr">log.level</span> = <span class="string">&quot;info&quot;</span></span><br><span class="line"><span class="attr">log.maxDays</span> = <span class="number">3</span></span><br><span class="line"><span class="comment"># disable log colors when log.to is console, default is false</span></span><br><span class="line"><span class="attr">log.disablePrintColor</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">auth.method</span> = <span class="string">&quot;token&quot;</span></span><br><span class="line"><span class="comment"># auth token</span></span><br><span class="line"><span class="attr">auth.token</span> = <span class="string">&quot;12345678&quot;</span></span><br><span class="line"><span class="comment"># Max ports can be used for each client, default value is 0 means no limit</span></span><br><span class="line"><span class="attr">maxPortsPerClient</span> = <span class="number">0</span></span><br><span class="line"><span class="attr">subDomainHost</span> = <span class="string">&quot;frps.com&quot;</span></span><br><span class="line"><span class="attr">udpPacketSize</span> = <span class="number">1500</span></span><br></pre></td></tr></table></figure>
+
+<p>1.2.3.拉取镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull snowdreamtech/frps:latest</span><br></pre></td></tr></table></figure>
+
+<p>1.2.4. 启动docker容器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always --network host -d -v /frp/frps.toml:/etc/frp/frps.toml --name frps snowdreamtech/frps</span><br></pre></td></tr></table></figure>
+
+<p>1.2.5 docker相关命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a             //查看运行中的容器</span><br><span class="line">docker restart dockerID  //重启镜像</span><br><span class="line">docker stop dockerID     //停止镜像</span><br><span class="line">docker start dockerID    //启动镜像</span><br><span class="line">docker <span class="built_in">rm</span> dockerID       //删除镜像</span><br></pre></td></tr></table></figure>
+
+<p>1.2.6 配置docker自启,并镜像自动启动</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker                    //配置docker自启</span><br><span class="line"> docker ps -a                               //查看docker ID</span><br><span class="line"> docker update --restart=always dockerID    //配置镜像自启</span><br></pre></td></tr></table></figure>
+<p>1.2 frpc </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /frp</span><br><span class="line">vim /frp/frps.toml</span><br></pre></td></tr></table></figure>
+
+<p>编辑frps.toml配置文件</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bindAddr</span> = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line"><span class="attr">bindPort</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="attr">webServer.addr</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">webServer.port</span> = <span class="number">7001</span></span><br><span class="line"><span class="attr">webServer.user</span> = <span class="string">&quot;admin&quot;</span></span><br><span class="line"><span class="attr">webServer.password</span> = <span class="string">&quot;admin&quot;</span></span><br><span class="line"><span class="comment"># webServer.tls.certFile = &quot;server.crt&quot;</span></span><br><span class="line"><span class="comment"># webServer.tls.keyFile = &quot;server.key&quot;</span></span><br><span class="line"><span class="comment"># dashboard assets directory(only for debug mode)</span></span><br><span class="line"><span class="comment"># webServer.assetsDir = &quot;./static&quot;</span></span><br><span class="line"><span class="comment"># enablePrometheus will export prometheus metrics on webServer in /metrics api.</span></span><br><span class="line"><span class="attr">enablePrometheus</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># console or real logFile path like ./frps.log</span></span><br><span class="line"><span class="comment">#log.to = &quot;./frps.log&quot;</span></span><br><span class="line"><span class="comment"># trace, debug, info, warn, error</span></span><br><span class="line"><span class="attr">log.level</span> = <span class="string">&quot;info&quot;</span></span><br><span class="line"><span class="attr">log.maxDays</span> = <span class="number">3</span></span><br><span class="line"><span class="comment"># disable log colors when log.to is console, default is false</span></span><br><span class="line"><span class="attr">log.disablePrintColor</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">auth.method</span> = <span class="string">&quot;token&quot;</span></span><br><span class="line"><span class="comment"># auth token</span></span><br><span class="line"><span class="attr">auth.token</span> = <span class="string">&quot;12345678&quot;</span></span><br><span class="line"><span class="comment"># Max ports can be used for each client, default value is 0 means no limit</span></span><br><span class="line"><span class="attr">maxPortsPerClient</span> = <span class="number">0</span></span><br><span class="line"><span class="attr">subDomainHost</span> = <span class="string">&quot;frps.com&quot;</span></span><br><span class="line"><span class="attr">udpPacketSize</span> = <span class="number">1500</span></span><br></pre></td></tr></table></figure>
+
+<p>1.2.3.拉取镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull snowdreamtech/frps:latest</span><br></pre></td></tr></table></figure>
+
+<p>1.2.4. 启动docker容器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always --network host -d -v /frp/frpc.toml:/etc/frp/frpc.toml --name frpc snowdreamtech/frpc</span><br></pre></td></tr></table></figure>
+
+<p>1.2.4.命令行运行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\frpc.exe -c .\frpc.toml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">user</span> = <span class="string">&quot;root&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">serverAddr</span> = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line"><span class="attr">serverPort</span> = <span class="number">7000</span></span><br><span class="line"><span class="attr">loginFailExit</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment">#log.to = &quot;./frpc.log&quot;</span></span><br><span class="line"><span class="attr">log.level</span> = <span class="string">&quot;info&quot;</span></span><br><span class="line"><span class="attr">log.maxDays</span> = <span class="number">3</span></span><br><span class="line"><span class="attr">log.disablePrintColor</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">auth.method</span> = <span class="string">&quot;token&quot;</span></span><br><span class="line"><span class="attr">auth.token</span> = <span class="string">&quot;12345678&quot;</span></span><br><span class="line"><span class="comment"># Set admin address for control frpc&#x27;s action by http api such as reload</span></span><br><span class="line"><span class="attr">webServer.addr</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">webServer.port</span> = <span class="number">7005</span></span><br><span class="line"><span class="attr">webServer.user</span> = <span class="string">&quot;admin&quot;</span></span><br><span class="line"><span class="attr">webServer.password</span> = <span class="string">&quot;admin&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># includes = [&quot;./confd/*.ini&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;ssh&quot;</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;10.11.150.5&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">34521</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">7004</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;plugin_socks5&quot;</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">7003</span></span><br><span class="line"><span class="section">[proxies.plugin]</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;socks5&quot;</span></span><br><span class="line"><span class="attr">username</span> = <span class="string">&quot;abc&quot;</span></span><br><span class="line"><span class="attr">password</span> = <span class="string">&quot;abc&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://s3.bmp.ovh/imgs/2023/10/27/567f2115d640e246.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E8%A1%80%E7%B3%96%E6%8C%87%E6%95%B0/">
+                    血糖指数
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/07/13/%E8%A1%80%E7%B3%96/2023-07-13/" class="trm-anima-link">
+                    葡萄
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/13</li>
+                <li>00:00</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2023028700号-1</a>
+        </div>
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.8
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.8"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.1.8"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.8"></script>
+
+</body>
+
+</html>
